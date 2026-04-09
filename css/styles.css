@@ -694,6 +694,27 @@ ul {
     0 0 60px rgba(232, 101, 26, 0.06);
 }
 
+/* --- Стрелка от чата к Kaspi (ПОСЛЕ) --- */
+.case-proof--posle {
+  position: relative;
+}
+
+.proof-arrow {
+  position: absolute;
+  top: -10%;
+  left: 45%;
+  width: 55%;
+  height: 70%;
+  z-index: 2;
+  pointer-events: none;
+  animation: proofArrowFloat 3s ease-in-out infinite;
+}
+
+@keyframes proofArrowFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(4px); }
+}
+
 /* --- Разделитель ДО→ПОСЛЕ (изогнутая стрелка справа→влево) --- */
 .case-divider {
   display: flex;
