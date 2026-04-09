@@ -92,6 +92,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -100,6 +102,8 @@ body {
   background: var(--bg);
   color: var(--text-primary);
   overflow-x: hidden;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -107,6 +111,12 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+a, button {
+  touch-action: manipulation;
 }
 
 a {
@@ -127,8 +137,8 @@ ul {
 .hero {
   position: relative;
   min-height: 100vh;
-  min-height: 100dvh;
-  padding: 20px 16px 10px;
+  min-height: 100svh;
+  padding: calc(env(safe-area-inset-top, 12px) + 8px) 16px calc(env(safe-area-inset-bottom, 6px) + 4px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
