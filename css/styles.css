@@ -1129,7 +1129,8 @@ ul {
   margin-top: 0;
 }
 
-/* Туман на фоне + оранжевое свечение сверху И снизу для слияния со смежными секциями */
+/* Туман на фоне — только оранжевое свечение сверху, без нижнего слоя
+   (нижний слой создавал паразитную «оранжевую полосу» на стыке с Outcome) */
 .step::before {
   content: '';
   position: absolute;
@@ -1138,7 +1139,6 @@ ul {
   pointer-events: none;
   background:
     radial-gradient(ellipse 90% 22% at 50% 0%, rgba(232, 101, 26, 0.18), transparent 75%),
-    radial-gradient(ellipse 90% 22% at 50% 100%, rgba(232, 101, 26, 0.18), transparent 75%),
     radial-gradient(ellipse 70% 30% at 50% 14%, rgba(232, 101, 26, 0.08), transparent 70%),
     radial-gradient(ellipse 60% 40% at 90% 50%, rgba(232, 101, 26, 0.05), transparent 75%),
     radial-gradient(ellipse 60% 30% at 10% 80%, rgba(232, 101, 26, 0.04), transparent 70%);
@@ -1497,6 +1497,11 @@ ul {
     color: var(--text-primary);
     text-shadow: 0 0 8px rgba(242, 237, 232, 0.4);
   }
+}
+
+/* Итог шага 3 — без оранжевого тинта (убираем оранжевую зону на стыке с Outcome) */
+.step-result--3 {
+  background: var(--bg-card);
 }
 
 /* Итог шага 3 — построчно с разделителями */
@@ -1960,20 +1965,16 @@ ul {
   isolation: isolate;
 }
 
-/* Бесшовная заливка фоном — поглощает «чёрную линию» между секциями */
+/* Никакого оранжевого ореола сверху — только лёгкое свечение в центре,
+   далеко от верхней границы (раньше здесь был большой orange gradient,
+   который физически вылезал в Step 3 и создавал «оранжевую линию») */
 .outcome::before {
   content: '';
   position: absolute;
-  inset: -1px 0 0 0;
+  inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    /* Большое оранжевое свечение по верху, перекрывает низ Step 3 */
-    radial-gradient(ellipse 110% 30% at 50% 0%, rgba(232, 101, 26, 0.22), transparent 70%),
-    /* Среднее свечение по центру для глубины */
-    radial-gradient(ellipse 80% 30% at 50% 50%, rgba(232, 101, 26, 0.06), transparent 75%),
-    /* Лёгкий низ */
-    radial-gradient(ellipse 90% 22% at 50% 100%, rgba(232, 101, 26, 0.1), transparent 75%);
+  background: radial-gradient(ellipse 70% 30% at 50% 60%, rgba(232, 101, 26, 0.05), transparent 75%);
 }
 
 /* --- Заголовок (квадратный текст, шрифт как в hero «Как языковой школе») --- */
@@ -2020,20 +2021,14 @@ ul {
   padding: 18px 16px 20px;
   border-radius: 22px;
   background: var(--bg-card);
-  border: 2px dashed rgba(232, 101, 26, 0.55);
-  box-shadow:
-    0 0 0 1px rgba(232, 101, 26, 0.08) inset,
-    0 14px 38px rgba(0, 0, 0, 0.35),
-    0 0 32px rgba(232, 101, 26, 0.12);
+  border: 2px dashed rgba(232, 101, 26, 0.55);    /* dashed border остаётся — это интенциональный референс-стиль */
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.35);    /* только тёмная drop-тень, без оранжевой ауры */
 }
 
 [data-theme="light"] .outcome-card {
   background: var(--bg-card);
   border-color: rgba(232, 101, 26, 0.6);
-  box-shadow:
-    0 0 0 1px rgba(232, 101, 26, 0.1) inset,
-    0 12px 30px rgba(0, 0, 0, 0.08),
-    0 0 24px rgba(232, 101, 26, 0.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Метки ДО / ПОСЛЕ */
