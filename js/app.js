@@ -19,12 +19,25 @@ function fitHeroTitle() {
   // Safety: never exceed reasonable bounds
   newSize = Math.max(20, Math.min(newSize, 80));
   top.style.fontSize = newSize + 'px';
+  top.classList.add('is-fitted');
 }
 
-if (document.fonts && document.fonts.ready) {
-  document.fonts.ready.then(fitHeroTitle);
+/* Wait specifically for Oswald to load before fitting */
+function waitForOswald() {
+  if (document.fonts && document.fonts.load) {
+    Promise.all([
+      document.fonts.load('700 30px Oswald'),
+      document.fonts.ready
+    ]).then(fitHeroTitle).catch(fitHeroTitle);
+  } else {
+    window.addEventListener('load', fitHeroTitle);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', waitForOswald);
 } else {
-  window.addEventListener('load', fitHeroTitle);
+  waitForOswald();
 }
 window.addEventListener('resize', fitHeroTitle);
 
