@@ -1936,9 +1936,228 @@ ul {
   white-space: nowrap;
 }
 
+/* Шаг 2 — заголовок итога крупнее (+4px) */
+.step-result--2 .step-result-text strong {
+  font-size: clamp(14px, 4.3vw, 17px);
+}
+
 [data-theme="light"] .step-card {
   border-color: transparent;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   ИТОГ ПО 3 ШАГАМ — секция .outcome
+   ============================================ */
+.outcome {
+  position: relative;
+  padding: 56px 16px 64px;
+  max-width: 480px;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+.outcome::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 24% at 50% 0%, rgba(232, 101, 26, 0.16), transparent 75%),
+    radial-gradient(ellipse 80% 30% at 50% 50%, rgba(232, 101, 26, 0.06), transparent 75%);
+}
+
+/* --- Заголовок (квадратный текст) --- */
+.outcome-headline-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.outcome-headline {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-primary);
+  letter-spacing: 0.6px;
+  line-height: 1.02;
+}
+
+.outcome-line {
+  display: block;
+  white-space: nowrap;
+  font-size: clamp(20px, 6vw, 26px);
+}
+
+.outcome-soft {
+  color: var(--accent);
+  text-shadow:
+    0 0 10px rgba(232, 101, 26, 0.45),
+    0 0 22px rgba(232, 101, 26, 0.2);
+}
+
+.outcome-money {
+  margin: 6px 0 4px;
+  font-size: clamp(44px, 13vw, 60px);
+  letter-spacing: 1.2px;
+  line-height: 0.95;
+  color: var(--accent);
+  text-shadow:
+    0 0 18px rgba(232, 101, 26, 0.5),
+    0 0 42px rgba(232, 101, 26, 0.25);
+  filter: drop-shadow(0 4px 14px rgba(232, 101, 26, 0.3));
+}
+
+/* --- Карточка с иллюстрацией и чеками --- */
+.outcome-card {
+  position: relative;
+  padding: 18px 16px 20px;
+  border-radius: 22px;
+  background: var(--bg-card);
+  border: 2px dashed rgba(232, 101, 26, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(232, 101, 26, 0.08) inset,
+    0 14px 38px rgba(0, 0, 0, 0.35),
+    0 0 32px rgba(232, 101, 26, 0.12);
+}
+
+[data-theme="light"] .outcome-card {
+  background: var(--bg-card);
+  border-color: rgba(232, 101, 26, 0.6);
+  box-shadow:
+    0 0 0 1px rgba(232, 101, 26, 0.1) inset,
+    0 12px 30px rgba(0, 0, 0, 0.08),
+    0 0 24px rgba(232, 101, 26, 0.1);
+}
+
+/* Метки ДО / ПОСЛЕ */
+.outcome-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 6px;
+  margin-bottom: 10px;
+}
+
+.outcome-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: clamp(26px, 7.6vw, 32px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow:
+    0.5px 0 0 currentColor,
+    -0.5px 0 0 currentColor;
+}
+
+.outcome-label--do {
+  color: var(--text-muted);
+}
+
+.outcome-label--posle {
+  color: var(--accent);
+}
+
+/* Иллюстрация (cartoon до/после, во всю ширину карточки) */
+.outcome-illustration {
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(232, 101, 26, 0.12);
+}
+
+.outcome-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* X / ✓ под иллюстрацией */
+.outcome-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 8px 10px;
+}
+
+.outcome-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.outcome-icon iconify-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+}
+
+.outcome-icon--bad {
+  background: rgba(201, 83, 15, 0.12);
+  border: 2px solid rgba(201, 83, 15, 0.55);
+}
+
+.outcome-icon--bad iconify-icon {
+  color: #C9530F;
+}
+
+.outcome-icon--good {
+  background: rgba(232, 101, 26, 0.14);
+  border: 2px solid rgba(232, 101, 26, 0.65);
+  box-shadow: 0 0 18px rgba(232, 101, 26, 0.25);
+}
+
+.outcome-icon--good iconify-icon {
+  color: var(--accent);
+}
+
+/* Скриншоты операций ДО / ПОСЛЕ */
+.outcome-receipts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.outcome-receipt {
+  display: block;
+  width: calc(50% - 5px);
+}
+
+.outcome-receipt img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    0 0 22px rgba(232, 101, 26, 0.12);
+}
+
+[data-theme="light"] .outcome-receipt img,
+[data-theme="light"] .outcome-illustration {
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.08),
+    0 0 18px rgba(232, 101, 26, 0.08);
+}
+
+@media (max-width: 360px) {
+  .outcome-line { font-size: 18px; }
+  .outcome-money { font-size: 40px; }
+  .outcome-label { font-size: 24px; }
 }
 
 [data-theme="light"] .step-image img {
