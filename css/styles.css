@@ -511,7 +511,7 @@ ul {
    ============================================ */
 
 .case {
-  padding: 60px 16px 40px;
+  padding: 48px 16px 40px;
   max-width: 480px;
   margin: 0 auto;
   overflow: clip;
@@ -520,10 +520,10 @@ ul {
 /* --- Intro: карточка с фото + заголовок --- */
 .case-intro {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 14px;
-  margin-bottom: 28px;
-  padding: 20px 16px;
+  margin-bottom: 20px;
+  padding: 16px;
   border-radius: 16px;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -531,9 +531,9 @@ ul {
 
 .case-photo-wrap {
   flex-shrink: 0;
-  width: 100px;
-  height: 130px;
-  border-radius: 14px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 30px rgba(232, 101, 26, 0.2);
 }
@@ -553,7 +553,7 @@ ul {
 .case-title {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.1;
   color: var(--text-primary);
   text-transform: uppercase;
@@ -567,10 +567,10 @@ ul {
 .case-desc {
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.4;
   color: var(--text-secondary);
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .case-desc strong {
@@ -578,53 +578,58 @@ ul {
   font-weight: 700;
 }
 
-/* --- ДО / ПОСЛЕ блоки --- */
-.case-block {
-  padding: 24px 20px;
-  border-radius: 16px;
+/* --- Единая карточка ДО/ПОСЛЕ --- */
+.case-card {
+  border-radius: 20px;
   background: var(--bg-card);
-  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  padding: 24px 18px;
 }
 
+/* --- Метки ДО / ПОСЛЕ --- */
 .case-label {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 32px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
+  text-shadow:
+    0.5px 0 0 currentColor,
+    -0.5px 0 0 currentColor;
 }
 
-.case-label--before {
-  color: var(--text-muted);
-}
-
-.case-label--after {
+.case-label--do {
   color: var(--accent);
 }
 
+.case-label--posle {
+  color: var(--accent);
+}
+
+/* --- Список --- */
 .case-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .case-list li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.45;
   color: var(--text-primary);
 }
 
 .case-list li iconify-icon {
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  font-size: 18px;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
   margin-top: 2px;
 }
 
@@ -632,40 +637,49 @@ ul {
   font-weight: 700;
 }
 
-/* --- Скриншоты --- */
-.case-screens {
+/* --- Скриншоты-доказательства (справа снизу) --- */
+.case-proof {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+  justify-content: flex-end;
 }
 
-.case-screens picture {
+.case-proof picture {
   display: block;
 }
 
-.case-screen {
+.case-proof-chat {
+  width: 55%;
+}
+
+.case-proof-bank {
+  width: 40%;
+}
+
+.case-proof img {
   width: 100%;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
 }
 
-.case-screen--small {
-  max-width: 280px;
-}
-
-.case-screens picture:has(.case-screen--small) {
-  align-self: center;
-}
-
-/* --- Декоративная стрелка ДО→ПОСЛЕ --- */
-.case-arrow {
-  text-align: center;
-  margin: 8px 0 16px;
-  font-size: 36px;
+/* --- Разделитель ДО→ПОСЛЕ --- */
+.case-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 20px 0;
   color: var(--accent);
-  filter: drop-shadow(0 4px 10px rgba(232, 101, 26, 0.4));
+  font-size: 28px;
+  filter: drop-shadow(0 3px 8px rgba(232, 101, 26, 0.4));
+}
+
+.case-divider iconify-icon:last-child {
+  margin-top: -12px;
+  opacity: 0.5;
+  font-size: 22px;
 }
 
 /* --- Fade-in анимация при скролле --- */

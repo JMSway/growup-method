@@ -98,7 +98,7 @@
   <section class="case" id="case">
 
     <!-- Заголовок + фото -->
-    <div class="case-intro">
+    <div class="case-intro fade-up">
       <div class="case-photo-wrap">
         <picture>
           <source srcset="assets/images/block-ainur/ainura-photo.webp" type="image/webp">
@@ -108,8 +108,8 @@
       </div>
       <div class="case-intro-text">
         <h2 class="case-title">
-          <span class="case-title-accent">Знакомьтесь. Это Айнура,</span><br>
-          владелец языковой школы в&nbsp;Караганде
+          <span class="case-title-accent">Знакомьтесь. Это Айнура,</span>
+          владелец языковой школы
         </h2>
         <p class="case-desc">
           Вышла на стабильные <strong>5&nbsp;000&nbsp;000&nbsp;₸</strong> после внедрения системы «Grow&nbsp;Up»
@@ -117,83 +117,87 @@
       </div>
     </div>
 
-    <!-- БЛОК ДО -->
-    <div class="case-block case-before fade-up">
-      <h3 class="case-label case-label--before">До:</h3>
-      <ul class="case-list">
-        <li>
-          <iconify-icon icon="lucide:x" class="icon-error"></iconify-icon>
-          <span>Каждый <strong>2-й</strong> не доходит до пробного</span>
-        </li>
-        <li>
-          <iconify-icon icon="lucide:x" class="icon-error"></iconify-icon>
-          <span>Нет стабильного потока учеников, только сарафан</span>
-        </li>
-        <li>
-          <iconify-icon icon="lucide:x" class="icon-error"></iconify-icon>
-          <span><strong>7 из 10</strong> после пробного уходили «подумать»</span>
-        </li>
-        <li>
-          <iconify-icon icon="lucide:x" class="icon-error"></iconify-icon>
-          <span>Приходится использовать скидки и акции, теряя доход</span>
-        </li>
-      </ul>
-    </div>
+    <!-- ЕДИНЫЙ БЛОК: ДО + скрины + стрелка + ПОСЛЕ + скрины -->
+    <div class="case-card fade-up">
 
-    <!-- Скриншот ДО -->
-    <div class="case-screens fade-up">
-      <picture>
-        <source srcset="assets/images/block-ainur/chat-ainura-do.webp" type="image/webp">
-        <img src="assets/images/block-ainur/chat-ainura-do.png"
-             alt="Сообщение Айнуры до работы с Grow Up" class="case-screen" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="assets/images/block-ainur/chat-asel-do.webp" type="image/webp">
-        <img src="assets/images/block-ainur/chat-asel-do.png"
-             alt="Выручка до — 876 873 ₸" class="case-screen case-screen--small" loading="lazy">
-      </picture>
-    </div>
+      <!-- ДО -->
+      <div class="case-section-do">
+        <h3 class="case-label case-label--do">До:</h3>
+        <ul class="case-list">
+          <li>
+            <iconify-icon icon="lucide:x" class="icon-error"></iconify-icon>
+            <span>Нет стабильного <strong>потока учеников</strong>, только сарафан</span>
+          </li>
+          <li>
+            <iconify-icon icon="lucide:x" class="icon-error"></iconify-icon>
+            <span>Каждый <strong>2-й</strong> не доходит до пробного</span>
+          </li>
+          <li>
+            <iconify-icon icon="lucide:x" class="icon-error"></iconify-icon>
+            <span>Приходится использовать скидки и акции, теряя доход</span>
+          </li>
+          <li>
+            <iconify-icon icon="lucide:x" class="icon-error"></iconify-icon>
+            <span><strong>7 из 10</strong> пробных уроков проходят впустую</span>
+          </li>
+        </ul>
+        <!-- Скрины ДО — справа снизу -->
+        <div class="case-proof">
+          <picture class="case-proof-chat">
+            <source srcset="assets/images/block-ainur/chat-ainura-do.webp" type="image/webp">
+            <img src="assets/images/block-ainur/chat-ainura-do.png"
+                 alt="Сообщение Айнуры" loading="lazy">
+          </picture>
+          <picture class="case-proof-bank">
+            <source srcset="assets/images/block-ainur/chat-asel-do.webp" type="image/webp">
+            <img src="assets/images/block-ainur/chat-asel-do.png"
+                 alt="Выручка до — 876 873 ₸" loading="lazy">
+          </picture>
+        </div>
+      </div>
 
-    <!-- Декоративная стрелка -->
-    <div class="case-arrow fade-up">
-      <iconify-icon icon="lucide:arrow-down"></iconify-icon>
-    </div>
+      <!-- Стрелка ДО→ПОСЛЕ -->
+      <div class="case-divider">
+        <iconify-icon icon="lucide:chevron-down"></iconify-icon>
+        <iconify-icon icon="lucide:chevron-down"></iconify-icon>
+      </div>
 
-    <!-- БЛОК ПОСЛЕ -->
-    <div class="case-block case-after fade-up">
-      <h3 class="case-label case-label--after">После:</h3>
-      <ul class="case-list">
-        <li>
-          <iconify-icon icon="lucide:check" class="icon-accent"></iconify-icon>
-          <span><strong>5–6</strong> записей на пробный ежедневно без скидок</span>
-        </li>
-        <li>
-          <iconify-icon icon="lucide:check" class="icon-accent"></iconify-icon>
-          <span>Каждый <strong>2-й</strong> после пробного покупает абонемент</span>
-        </li>
-        <li>
-          <iconify-icon icon="lucide:check" class="icon-accent"></iconify-icon>
-          <span>Группы заполняются на <strong>100%</strong></span>
-        </li>
-        <li>
-          <iconify-icon icon="lucide:check" class="icon-accent"></iconify-icon>
-          <span>Привлекает учеников без скидок и акций</span>
-        </li>
-      </ul>
-    </div>
+      <!-- ПОСЛЕ -->
+      <div class="case-section-posle">
+        <h3 class="case-label case-label--posle">После:</h3>
+        <ul class="case-list">
+          <li>
+            <iconify-icon icon="lucide:check" class="icon-accent"></iconify-icon>
+            <span><strong>5–6</strong> записей на пробный ежедневно без скидок</span>
+          </li>
+          <li>
+            <iconify-icon icon="lucide:check" class="icon-accent"></iconify-icon>
+            <span>Каждый <strong>2-й</strong> после пробного покупает абонемент</span>
+          </li>
+          <li>
+            <iconify-icon icon="lucide:check" class="icon-accent"></iconify-icon>
+            <span>Группы заполняются на <strong>100%</strong></span>
+          </li>
+          <li>
+            <iconify-icon icon="lucide:check" class="icon-accent"></iconify-icon>
+            <span>Увеличила выручку до <strong>5&nbsp;000&nbsp;000&nbsp;₸</strong></span>
+          </li>
+        </ul>
+        <!-- Скрины ПОСЛЕ — справа снизу -->
+        <div class="case-proof">
+          <picture class="case-proof-chat">
+            <source srcset="assets/images/block-ainur/chat-ainura-posle.webp" type="image/webp">
+            <img src="assets/images/block-ainur/chat-ainura-posle.png"
+                 alt="Вышли на 5 миллионов" loading="lazy">
+          </picture>
+          <picture class="case-proof-bank">
+            <source srcset="assets/images/block-ainur/chat-ainur-posle.webp" type="image/webp">
+            <img src="assets/images/block-ainur/chat-ainur-posle.png"
+                 alt="Выручка после — 5 645 343 ₸" loading="lazy">
+          </picture>
+        </div>
+      </div>
 
-    <!-- Скриншот ПОСЛЕ -->
-    <div class="case-screens fade-up">
-      <picture>
-        <source srcset="assets/images/block-ainur/chat-ainura-posle.webp" type="image/webp">
-        <img src="assets/images/block-ainur/chat-ainura-posle.png"
-             alt="Сообщение Айнуры — вышли на 5 миллионов" class="case-screen" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="assets/images/block-ainur/chat-ainur-posle.webp" type="image/webp">
-        <img src="assets/images/block-ainur/chat-ainur-posle.png"
-             alt="Выручка после — 5 645 343 ₸" class="case-screen case-screen--small" loading="lazy">
-      </picture>
     </div>
 
   </section>
