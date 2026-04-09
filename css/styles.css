@@ -1315,21 +1315,30 @@ ul {
 .step-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   margin-top: 8px;
   padding-left: 4px;
 }
 
 .step-list li {
+  position: relative;
   font-family: 'Gilroy', sans-serif;
   font-size: 13px;
   line-height: 1.5;
   color: var(--text-secondary);
+  padding-left: 22px;
 }
 
 .step-list li::before {
-  content: '— ';
-  color: var(--text-muted);
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 14px;
+  height: 8px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 8' fill='none'><path d='M1 4 L13 4 M10 1 L13 4 L10 7' stroke='%23E8651A' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* Картинки */
@@ -1484,19 +1493,12 @@ ul {
 
 .step-list-bullets {
   margin-top: 8px;
-  padding-left: 12px;
+  padding-left: 8px;
 }
 
 .step-list-bullets li {
   font-size: 14px;
   color: var(--text-primary);
-  padding-left: 4px;
-}
-
-.step-list-bullets li::before {
-  content: '→ ';
-  color: var(--accent);
-  font-weight: 700;
 }
 
 .step-list-bullets li strong {
