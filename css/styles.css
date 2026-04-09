@@ -474,10 +474,24 @@ ul {
 /* --- Scroll Indicator --- */
 .scroll-indicator {
   margin-top: 12px;
-  font-size: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
   color: var(--accent);
   filter: drop-shadow(0 6px 14px rgba(232, 101, 26, 0.5));
   animation: scrollBounce 1.4s ease-in-out infinite;
+}
+
+.scroll-indicator .arrow-top {
+  font-size: 44px;
+  opacity: 1;
+}
+
+.scroll-indicator .arrow-bottom {
+  font-size: 34px;
+  margin-top: -16px;
+  opacity: 0.65;
 }
 
 @keyframes scrollBounce {
