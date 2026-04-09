@@ -43,16 +43,16 @@ function fitOutcomeHeadline() {
   if (!wrap || !lines.length) return;
   var wrapW = wrap.getBoundingClientRect().width;
   if (!wrapW) return;
-  // Целевая ширина — 96% обёртки (оставляем небольшие поля по бокам)
-  var targetW = wrapW * 0.96;
+  // Целевая ширина — почти вся обёртка (1% страховки от subpixel-переноса)
+  var targetW = wrapW * 0.99;
   lines.forEach(function (line) {
     line.style.fontSize = '';
     var w = line.getBoundingClientRect().width;
     if (!w) return;
     var current = parseFloat(getComputedStyle(line).fontSize);
     var newSize = current * (targetW / w);
-    // Безопасные границы
-    newSize = Math.max(14, Math.min(newSize, 36));
+    // Безопасные границы — потолок выше, чтобы короткие строки могли разрастись
+    newSize = Math.max(14, Math.min(newSize, 56));
     line.style.fontSize = newSize + 'px';
   });
 }
