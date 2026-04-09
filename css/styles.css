@@ -279,6 +279,21 @@ ul {
   margin-right: auto;
 }
 
+.growup-grow,
+.growup-up {
+  display: inline-block;
+  color: var(--text-primary);
+  animation: growupBlink 3.6s ease-in-out infinite;
+}
+
+.growup-grow { animation-delay: 0s; }
+.growup-up   { animation-delay: 0.6s; }
+
+@keyframes growupBlink {
+  0%, 70%, 100% { color: var(--text-primary); }
+  20%           { color: var(--accent); }
+}
+
 
 /* ============================================
    HERO VISUAL — Layered Animation
