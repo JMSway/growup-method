@@ -464,19 +464,20 @@ ul {
 }
 
 .hero-next {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: var(--text-secondary);
-  opacity: 0.7;
-  margin-top: 4px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
 }
 
 /* --- Scroll Indicator --- */
 .scroll-indicator {
-  margin-top: 6px;
-  font-size: 28px;
-  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 36px;
+  color: var(--accent);
   animation: scrollBounce 1.4s ease-in-out infinite;
 }
 
