@@ -48,9 +48,9 @@ var io = new IntersectionObserver(function (entries) {
 
 document.querySelectorAll('.fade-up').forEach(function (el) { io.observe(el); });
 
-/* Step underline: draw wavy line under внеконкурентное предложение, re-trigger on re-entry */
-var underlineTarget = document.querySelector('.step-underline-target');
-if (underlineTarget) {
+/* Step underline: draw wavy line under accent phrases, re-trigger on re-entry */
+var underlineTargets = document.querySelectorAll('.step-underline-target');
+if (underlineTargets.length) {
   var underlineIO = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
@@ -62,7 +62,7 @@ if (underlineTarget) {
       }
     });
   }, { threshold: 0.6 });
-  underlineIO.observe(underlineTarget);
+  underlineTargets.forEach(function (el) { underlineIO.observe(el); });
 }
 
 /* Bridge: light up words on scroll, fade back, re-trigger on re-entry */

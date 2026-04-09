@@ -1173,19 +1173,21 @@ ul {
 .step-badge-num {
   font-family: 'Oswald', 'Bebas Neue', sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: clamp(14px, 4.4vw, 20px);
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .step-badge-name {
   font-family: 'Oswald', 'Bebas Neue', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: clamp(14px, 4.4vw, 20px);
   color: #F2EDE8; /* всегда белый — бейдж имеет тёмный фон в любой теме */
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 /* Карточка шага */
