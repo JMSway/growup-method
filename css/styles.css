@@ -501,6 +501,163 @@ ul {
 
 
 /* ============================================
+   СЕКЦИЯ 2: КЕЙС АЙНУРЫ (ДО / ПОСЛЕ)
+   ============================================ */
+
+.case {
+  padding: 60px 16px 40px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* --- Intro: фото + заголовок --- */
+.case-intro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.case-photo-wrap {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(232, 101, 26, 0.25);
+}
+
+.case-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.case-title-accent {
+  color: var(--accent);
+}
+
+.case-desc {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.case-desc strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* --- ДО / ПОСЛЕ блоки --- */
+.case-block {
+  padding: 24px 20px;
+  border-radius: 16px;
+  background: var(--bg-card);
+  margin-bottom: 16px;
+}
+
+.case-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.case-label--before {
+  color: var(--text-muted);
+}
+
+.case-label--after {
+  color: var(--accent);
+}
+
+.case-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.case-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+.case-list li iconify-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.case-list li strong {
+  font-weight: 700;
+}
+
+/* --- Скриншоты --- */
+.case-screens {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.case-screen {
+  width: 100%;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.case-screen--small {
+  max-width: 280px;
+  align-self: center;
+}
+
+/* --- Декоративная стрелка ДО→ПОСЛЕ --- */
+.case-arrow {
+  text-align: center;
+  margin: 8px 0 16px;
+  font-size: 36px;
+  color: var(--accent);
+  filter: drop-shadow(0 4px 10px rgba(232, 101, 26, 0.4));
+}
+
+/* --- Fade-in анимация при скролле --- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================
    ACCESSIBILITY: prefers-reduced-motion
    ============================================ */
 
@@ -509,5 +666,10 @@ ul {
   .scroll-indicator {
     animation: none !important;
     filter: none !important;
+  }
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
