@@ -1293,6 +1293,13 @@ ul {
   opacity: 1;
 }
 
+/* Второй хлыст ("сформированной потребностью") появляется после первого */
+.step-underline-delay-2.is-drawn .step-underline {
+  animation:
+    stepUnderlineDraw 2s ease-out 1.5s forwards,
+    stepUnderlineFloat 5s ease-in-out 3.5s infinite;
+}
+
 @keyframes stepUnderlineDraw {
   0%   { stroke-dashoffset: 220; opacity: 0; }
   15%  { opacity: 1; }
