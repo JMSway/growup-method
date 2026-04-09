@@ -246,28 +246,33 @@ ul {
 
 .title-accent {
   display: block;
+  color: var(--text-primary);
+  text-shadow:
+    0.5px 0 0 currentColor,
+    -0.5px 0 0 currentColor,
+    0 0.5px 0 currentColor;
+}
+
+.title-sub {
+  display: block;
   color: var(--accent);
+  font-size: clamp(17px, 5vw, 26px);
+  margin-top: 12px;
   text-shadow:
     0.5px 0 0 var(--accent),
     -0.5px 0 0 var(--accent),
     0 0.5px 0 var(--accent);
 }
 
-.title-sub {
-  display: block;
-  font-size: clamp(17px, 5vw, 26px);
-  margin-top: 0;
-}
-
 .hero-subtitle {
   font-family: 'Gilroy', sans-serif;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.4;
   color: var(--text-primary);
-  margin-top: 8px;
+  margin-top: 12px;
   text-align: center;
-  max-width: 90%;
+  max-width: 92%;
   margin-left: auto;
   margin-right: auto;
 }
