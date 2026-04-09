@@ -670,10 +670,18 @@ ul {
 }
 
 .case-proof-chat {
-  width: 55%;
+  width: 50%;
 }
 
 .case-proof-bank {
+  width: 36%;
+}
+
+.case-section-posle .case-proof-chat {
+  width: 55%;
+}
+
+.case-section-posle .case-proof-bank {
   width: 40%;
 }
 
@@ -694,9 +702,8 @@ ul {
 }
 
 .case-arrow-svg {
-  width: 36px;
-  height: 36px;
-  filter: drop-shadow(0 2px 6px rgba(232, 101, 26, 0.3));
+  width: 28px;
+  height: 28px;
 }
 
 @keyframes caseArrowFloat {
@@ -752,7 +759,7 @@ ul {
 
 .case-kaspi-card {
   flex-shrink: 0;
-  width: 72%;
+  width: 60%;
 }
 
 .case-kaspi-card img {
