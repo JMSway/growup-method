@@ -511,10 +511,29 @@ ul {
    ============================================ */
 
 .case {
+  position: relative;
   padding: 48px 16px 40px;
   max-width: 480px;
   margin: 0 auto;
   overflow: clip;
+}
+
+.case::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 200px;
+  background: radial-gradient(
+    ellipse at center top,
+    rgba(232, 101, 26, 0.1) 0%,
+    rgba(232, 101, 26, 0.04) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* --- Intro: карточка с фото + заголовок --- */
@@ -600,7 +619,7 @@ ul {
 }
 
 .case-label--do {
-  color: var(--accent);
+  color: var(--text-muted);
 }
 
 .case-label--posle {
