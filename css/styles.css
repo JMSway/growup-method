@@ -694,22 +694,23 @@ ul {
     0 0 60px rgba(232, 101, 26, 0.06);
 }
 
-/* --- Разделитель ДО→ПОСЛЕ (SVG стрелка) --- */
+/* --- Разделитель ДО→ПОСЛЕ (изогнутая стрелка справа→влево) --- */
 .case-divider {
   display: flex;
-  justify-content: center;
-  margin: 12px 0;
+  justify-content: flex-end;
+  margin: 8px 0 4px;
+  padding-right: 10px;
   animation: caseArrowFloat 2.5s ease-in-out infinite;
 }
 
 .case-arrow-svg {
-  width: 28px;
-  height: 28px;
+  width: 180px;
+  height: 75px;
 }
 
 @keyframes caseArrowFloat {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(6px); }
+  50%      { transform: translateY(5px); }
 }
 
 /* --- Извилистая декоративная стрелка (фон) --- */
