@@ -1862,9 +1862,7 @@ ul {
   border-radius: 14px;
   background: linear-gradient(135deg, rgba(232, 101, 26, 0.12), rgba(232, 101, 26, 0.04));
   border: none;
-  box-shadow:
-    0 8px 28px rgba(232, 101, 26, 0.18),
-    0 12px 36px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);  /* только мягкая тёмная тень — без оранжевого ореола */
   overflow: hidden;
   isolation: isolate;
 }
