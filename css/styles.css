@@ -1264,6 +1264,43 @@ ul {
   font-weight: 700;
 }
 
+/* Подчёркивание-волна под "внеконкурентное предложение" */
+.step-underline-target {
+  position: relative;
+  display: inline-block;
+}
+
+.step-underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 10px;
+  pointer-events: none;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  opacity: 0;
+}
+
+.step-underline-target.is-drawn .step-underline {
+  animation:
+    stepUnderlineDraw 1.2s ease-out forwards,
+    stepUnderlineFloat 4s ease-in-out 1.2s infinite;
+  opacity: 1;
+}
+
+@keyframes stepUnderlineDraw {
+  0%   { stroke-dashoffset: 220; opacity: 0; }
+  20%  { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes stepUnderlineFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(2px); }
+}
+
 /* Список «и все говорят...» */
 .step-list {
   display: flex;

@@ -40,6 +40,20 @@ var io = new IntersectionObserver(function (entries) {
 
 document.querySelectorAll('.fade-up').forEach(function (el) { io.observe(el); });
 
+/* Step underline: draw wavy line under внеконкурентное предложение on scroll */
+var underlineTarget = document.querySelector('.step-underline-target');
+if (underlineTarget) {
+  var underlineIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-drawn');
+        underlineIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  underlineIO.observe(underlineTarget);
+}
+
 /* Bridge: light up words on scroll, fade back, re-trigger on re-entry */
 var bridge = document.querySelector('.bridge');
 if (bridge) {
