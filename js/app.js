@@ -39,3 +39,17 @@ var io = new IntersectionObserver(function (entries) {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.fade-up').forEach(function (el) { io.observe(el); });
+
+/* Bridge: light up words on scroll */
+var bridge = document.querySelector('.bridge');
+if (bridge) {
+  var bridgeIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-lit');
+        bridgeIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  bridgeIO.observe(bridge);
+}
