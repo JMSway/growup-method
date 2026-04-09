@@ -1313,10 +1313,10 @@ ul {
 /* Оранжевый кружок поверх "Места 1320" */
 .step-image-circle {
   position: absolute;
-  top: 13%;
-  right: 4%;
-  width: 26%;
-  aspect-ratio: 1.6 / 1;
+  top: 8%;
+  right: 1%;
+  width: 22%;
+  aspect-ratio: 1.7 / 1;
   border: 2.5px solid var(--accent);
   border-radius: 50%;
   pointer-events: none;
