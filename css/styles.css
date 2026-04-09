@@ -1565,7 +1565,8 @@ ul {
   color: var(--text-secondary);
   margin-top: 16px;
   text-align: center;
-  font-size: 14px;
+  font-size: clamp(15px, 4.4vw, 17px);
+  white-space: nowrap;
 }
 
 .step-tpu-arrow {
