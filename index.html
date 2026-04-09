@@ -12,8 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap&subset=cyrillic" rel="stylesheet">
   <!-- Preload critical hero image -->
   <link rel="preload" href="assets/images/mainPage1/main1-suitcase.webp" as="image" type="image/webp">
-  <!-- Preload 2GIS (loads slow when scrolling, prefetch early) -->
+  <!-- Prefetch step images (used when scrolling) -->
   <link rel="prefetch" href="assets/images/3steps/2gis-schools-1step.webp" as="image" type="image/webp">
+  <link rel="prefetch" href="assets/images/3steps/review-whatsapp-1step.webp" as="image" type="image/webp">
   <!-- Preload fonts -->
   <link rel="preload" href="assets/fonts/Gilroy-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Gilroy-Medium.woff2" as="font" type="font/woff2" crossorigin>
@@ -335,8 +336,8 @@
       </ul>
 
       <p class="step-text step-pointer">
-        <iconify-icon icon="lucide:hand-pointer" class="icon-accent"></iconify-icon>
-        Поэтому клиент выбирает <strong>по цене.</strong>
+        <iconify-icon icon="lucide:tag" class="icon-accent"></iconify-icon>
+        Поэтому клиент выбирает <strong>по&nbsp;цене</strong>
       </p>
 
       <!-- Главный поинт -->
@@ -345,13 +346,18 @@
       </p>
 
       <!-- Отзыв -->
-      <picture class="step-image">
-        <source srcset="assets/images/3steps/review-whatsapp-1step.webp" type="image/webp">
-        <img src="assets/images/3steps/review-whatsapp-1step.png" alt="Отзыв от владельца языковой школы" loading="lazy">
-      </picture>
+      <div class="step-image-wrap step-image-review">
+        <picture class="step-image">
+          <source srcset="assets/images/3steps/review-whatsapp-1step.webp" type="image/webp">
+          <img src="assets/images/3steps/review-whatsapp-1step.png" alt="Отзыв от владельца языковой школы" decoding="async" fetchpriority="high">
+        </picture>
+      </div>
 
       <!-- Пример -->
-      <p class="step-example-title">Расскажу на примере</p>
+      <p class="step-example-title">
+        <iconify-icon icon="lucide:lightbulb" class="step-example-icon"></iconify-icon>
+        Расскажу на примере
+      </p>
 
       <p class="step-text">
         Человеку нужен английский для путешествий. Где он скорее выберет обучение?
@@ -368,7 +374,7 @@
         </li>
       </ul>
 
-      <p class="step-text step-obvious">Думаю, выбор очевиден.</p>
+      <p class="step-text step-obvious">Думаю, выбор очевиден</p>
 
       <!-- CRM скрин -->
       <picture class="step-image">
