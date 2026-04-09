@@ -1158,18 +1158,18 @@ ul {
 }
 
 .step-badge-num {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 800;
-  font-size: 13px;
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
   color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .step-badge-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -1194,6 +1194,37 @@ ul {
 
 .step-text:first-child {
   margin-top: 0;
+}
+
+.step-intro {
+  text-align: center;
+}
+
+/* Точки после "миллионниках" — появляются по очереди и мигают */
+.step-dots {
+  display: inline;
+  margin-left: 1px;
+}
+
+.step-dot {
+  display: inline-block;
+  opacity: 0;
+  color: var(--accent);
+  animation: stepDotCycle 4.5s ease-in-out infinite;
+}
+
+.step-dot:nth-child(1) { animation-delay: 0s; }
+.step-dot:nth-child(2) { animation-delay: 0.4s; }
+.step-dot:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes stepDotCycle {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  60%  { opacity: 1; }
+  70%  { opacity: 0.2; }
+  80%  { opacity: 1; }
+  90%  { opacity: 0.2; }
+  100% { opacity: 0; }
 }
 
 .step-text strong {
