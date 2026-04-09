@@ -1,3 +1,11 @@
+/* Disable browser scroll restoration — always start at top on refresh */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('beforeunload', function () {
+  window.scrollTo(0, 0);
+});
+
 /* Theme Toggle — always dark on load */
 document.querySelector('.theme-toggle').addEventListener('click', function () {
   var t = document.documentElement;

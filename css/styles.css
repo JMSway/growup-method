@@ -1182,7 +1182,7 @@ ul {
   font-family: 'Oswald', 'Bebas Neue', sans-serif;
   font-weight: 600;
   font-size: 20px;
-  color: var(--text-primary);
+  color: #F2EDE8; /* всегда белый — бейдж имеет тёмный фон в любой теме */
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
