@@ -1371,6 +1371,12 @@ ul {
   animation: none;
 }
 
+/* Чек Kaspi шага 3 */
+.step-image-kaspi {
+  width: 82%;
+  margin-top: 12px;
+}
+
 /* TPU label */
 /* Блок ТПУ — иконка слева, текст справа в две строки */
 .step-tpu-block {
