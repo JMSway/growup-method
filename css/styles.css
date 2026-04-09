@@ -1,0 +1,465 @@
+/* ============================================
+   GROW UP — MAIN STYLES
+   Mobile-first | Dark theme default
+   Шрифты: Bebas Neue (заголовки) + Gilroy (body)
+   ============================================ */
+
+/* --- Font Face --- */
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Extrabold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- CSS Custom Properties --- */
+:root,
+[data-theme="dark"] {
+  --bg: #0D0C0B;
+  --bg-card: #171614;
+  --border: #2A2825;
+  --text-primary: #F2EDE8;
+  --text-secondary: #9A9088;
+  --text-muted: #5C5550;
+  --accent: #E8651A;
+  --accent-hover: #F07535;
+  --accent-active: #C9530F;
+}
+
+[data-theme="light"] {
+  --bg: #FAF7F4;
+  --bg-card: #F0EAE3;
+  --border: #DDD4CC;
+  --text-primary: #1A1510;
+  --text-secondary: #6B5F58;
+  --text-muted: #A89E98;
+  --accent: #E8651A;
+  --accent-hover: #F07535;
+  --accent-active: #C9530F;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ============================================
+   СЕКЦИЯ 1: HERO
+   100vh fallback + 100dvh for mobile browsers
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 20px 16px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Мягкая оранжевая тень сверху */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(
+    180deg,
+    rgba(232, 101, 26, 0.08) 0%,
+    rgba(232, 101, 26, 0.03) 50%,
+    transparent 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* --- Theme Toggle --- */
+
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--border);
+  color: var(--text-primary);
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .icon-toggle-light { display: none; }
+[data-theme="light"] .icon-toggle-dark { display: none; }
+
+
+/* ============================================
+   HERO CONTENT — Text always above visual
+   ============================================ */
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-top: 12px;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 7.5vw, 40px);
+  line-height: 1.05;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-shadow:
+    0.5px 0 0 currentColor,
+    -0.5px 0 0 currentColor,
+    0 0.5px 0 currentColor;
+  text-align: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-accent {
+  display: block;
+  color: var(--accent);
+  text-shadow:
+    0.5px 0 0 var(--accent),
+    -0.5px 0 0 var(--accent),
+    0 0.5px 0 var(--accent);
+}
+
+.title-sub {
+  display: block;
+  font-size: clamp(17px, 5vw, 26px);
+  margin-top: 2px;
+}
+
+.hero-subtitle {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  text-align: center;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
+}
+
+
+/* ============================================
+   HERO VISUAL — Layered Animation
+   flex: 1 fills remaining space, centered
+   ============================================ */
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px auto 0;
+  transform: scale(1.15) translateY(-20px);
+}
+
+/* --- Orange Glow (hides PNG edges) --- */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(232, 101, 26, 0.55) 0%,
+    rgba(232, 101, 26, 0.3) 30%,
+    rgba(232, 101, 26, 0.12) 55%,
+    transparent 75%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* --- All layers: absolute, centered via translateX --- */
+.layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* --- CLOUDS-BACK (z-index: 0) — самый задний, за чемоданом --- */
+.layer.clouds-back {
+  z-index: 0;
+  width: 120%;
+  opacity: 0.45;
+  animation: cloudsMove 30s ease-in-out infinite reverse;
+}
+
+/* --- CLOUDS-LEFT (z-index: 0) — левая сторона, самый задний --- */
+.layer.clouds-left {
+  z-index: 0;
+  width: 70%;
+  left: 10%;
+  bottom: 15%;
+  opacity: 0.4;
+  transform: translateX(-50%) scaleX(-1);
+  animation: cloudsMove 26s ease-in-out infinite;
+}
+
+/* --- SUITCASE (z-index: 1) --- */
+.layer.suitcase {
+  z-index: 1;
+  width: 80%;
+  max-width: 420px;
+  animation: float 7s ease-in-out infinite;
+}
+
+/* --- BADGE (z-index: 2) — поверх чемодана --- */
+.layer.badge {
+  z-index: 2;
+  width: 22%;
+  bottom: 8%;
+  left: 72%;
+  animation: badgeFloat 4s ease-in-out infinite, badgePulse 3s ease-in-out infinite;
+}
+
+/* --- CLOUDS (z-index: 3) — поверх чемодана и badge --- */
+.layer.clouds {
+  z-index: 3;
+  width: 110%;
+  opacity: 0.7;
+  animation: cloudsMove 24s ease-in-out infinite;
+}
+
+/* --- PLANE (z-index: 4) — самый верхний слой --- */
+.layer.plane {
+  z-index: 4;
+  width: 35%;
+  top: 5%;
+  animation: planeFly 18s linear infinite;
+}
+
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+
+/* Suitcase: gentle premium float */
+@keyframes float {
+  0%   { transform: translateX(-50%) translateY(0); }
+  50%  { transform: translateX(-50%) translateY(-14px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* Clouds: slow horizontal drift */
+@keyframes cloudsMove {
+  0%   { transform: translateX(-50%) translateX(0); }
+  50%  { transform: translateX(-50%) translateX(-20px); }
+  100% { transform: translateX(-50%) translateX(0); }
+}
+
+/* Plane: soft arc trajectory */
+@keyframes planeFly {
+  0%   { transform: translateX(-50%) translate(0, 0); }
+  25%  { transform: translateX(-50%) translate(30px, -20px); }
+  50%  { transform: translateX(-50%) translate(50px, 0); }
+  75%  { transform: translateX(-50%) translate(30px, 20px); }
+  100% { transform: translateX(-50%) translate(0, 0); }
+}
+
+/* Badge: gentle float */
+@keyframes badgeFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Badge: soft glow pulse — subtle, not distracting */
+@keyframes badgePulse {
+  0%, 100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 4px rgba(232, 101, 26, 0.3));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(232, 101, 26, 0.6));
+  }
+}
+
+
+/* ============================================
+   BOTTOM ZONE — Bullets + highlight + scroll
+   ============================================ */
+
+.hero-bottom {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+
+.hero-bottom .hero-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.hero-bottom .hero-bullets .bullet-success span {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.hero-highlight {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  text-shadow:
+    0.5px 0 0 var(--accent),
+    -0.5px 0 0 var(--accent);
+}
+
+.hero-next {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* --- Scroll Indicator --- */
+.scroll-indicator {
+  margin-top: 6px;
+  font-size: 28px;
+  color: var(--text-muted);
+  animation: scrollBounce 1.4s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(10px); }
+}
+
+
+/* ============================================
+   ACCESSIBILITY: prefers-reduced-motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .layer,
+  .scroll-indicator {
+    animation: none !important;
+    filter: none !important;
+  }
+}

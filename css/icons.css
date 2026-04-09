@@ -1,0 +1,162 @@
+/* ============================================
+   ICON SYSTEM — Iconify + Lucide
+   ============================================
+   Единственная библиотека: Lucide (outline)
+   Подключение: Iconify Web Component
+   Формат: <iconify-icon icon="lucide:name"></iconify-icon>
+   ============================================ */
+
+/* --- Base Icon Style --- */
+iconify-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  color: currentColor;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* --- Size Variants --- */
+iconify-icon.icon-sm {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+}
+
+iconify-icon.icon-md {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+iconify-icon.icon-lg {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+}
+
+iconify-icon.icon-xl {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+}
+
+/* --- Color Variants --- */
+iconify-icon.icon-accent {
+  color: #E8651A;
+}
+
+iconify-icon.icon-error {
+  color: #C9530F;
+}
+
+iconify-icon.icon-muted {
+  color: var(--text-muted, #6B6560);
+}
+
+iconify-icon.icon-white {
+  color: #FFFFFF;
+}
+
+/* --- Bullet List Icons --- */
+.bullet-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.bullet-success iconify-icon {
+  color: #E8651A;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.bullet-fail {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.bullet-fail iconify-icon {
+  color: #C9530F;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+/* --- CTA Icon (always left of text) --- */
+.cta-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-icon iconify-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* --- Theme Toggle Icon --- */
+.theme-toggle iconify-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+/* --- Scroll Arrow Animation --- */
+.scroll-arrow iconify-icon {
+  color: var(--text-muted, #6B6560);
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* --- Step Badge Icon --- */
+.step-badge iconify-icon {
+  color: #FFFFFF;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+/* --- Problem Card Icon --- */
+.problem-card iconify-icon {
+  color: #E8651A;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+}
+
+/* --- SVG Illustrations --- */
+.illustration-container {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.illustration-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
