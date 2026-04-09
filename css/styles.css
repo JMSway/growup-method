@@ -1386,6 +1386,25 @@ ul {
   margin-top: 12px;
 }
 
+/* Подзаголовок с иконкой */
+.step-subhead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.step-subhead-icon {
+  flex-shrink: 0;
+  font-size: 22px;
+  color: var(--accent);
+  filter: drop-shadow(0 0 6px rgba(232, 101, 26, 0.35));
+}
+
+.step-list-large li {
+  font-size: 17px;
+}
+
 /* "И самое главное" блок (шаг 3) */
 .step-main-point {
   margin-top: 18px;
