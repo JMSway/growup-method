@@ -810,6 +810,22 @@ ul {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* --- Мост между секциями 2→3 --- */
+.bridge {
+  padding: 20px 16px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.bridge-text {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 0.3px;
+}
+
 /* ============================================
    СЕКЦИЯ 3: ЭКСПЕРТ + ПРОБЛЕМЫ
    ============================================ */
