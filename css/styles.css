@@ -720,9 +720,13 @@ ul {
   gap: 8px;
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: clamp(10.5px, 3vw, 13px);
   line-height: 1.45;
   color: var(--text-primary);
+}
+
+.case-list li span {
+  white-space: nowrap;
 }
 
 .case-list li iconify-icon {
