@@ -646,10 +646,10 @@ ul {
 }
 
 .case-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 800;
   font-size: clamp(14px, 4.2vw, 18px);
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.3px;
