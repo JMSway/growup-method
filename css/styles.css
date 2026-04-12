@@ -234,15 +234,15 @@ ul {
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.2px;
-  text-align: left;
+  text-align: center;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 14px 20px 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;    /* все 3 линии начинаются с одного левого края */
-  gap: 12px;
+  align-items: center;
+  gap: 10px;                  /* одинаковый отступ между всеми 3 линиями */
 }
 
 .title-accent {
@@ -260,7 +260,7 @@ ul {
   display: inline-block;
   color: var(--accent);
   white-space: nowrap;
-  font-size: clamp(18px, 5.3vw, 26px);
+  font-size: clamp(19px, 5.5vw, 27px);
   text-shadow:
     0.5px 0 0 var(--accent),
     -0.5px 0 0 var(--accent),
@@ -273,10 +273,11 @@ ul {
   font-size: clamp(14px, 3.9vw, 17px);
   line-height: 1.4;
   color: var(--text-primary);
-  margin-top: 12px;
-  text-align: left;
+  margin-top: 10px;             /* тот же gap что между линиями 1 и 2 */
+  text-align: center;
   white-space: nowrap;
-  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .growup-grow,
