@@ -326,7 +326,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 4px auto 0;
+  margin: -1px auto 0;
   transform: scale(1.15) translateY(-15px);
 }
 
@@ -511,7 +511,7 @@ ul {
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-top: 10px;
+  margin-top: 18px;
 }
 
 .hero-highlight-accent {
