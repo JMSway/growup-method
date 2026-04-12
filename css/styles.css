@@ -648,29 +648,42 @@ ul {
 .case-title {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
-  font-size: clamp(16px, 4.8vw, 20px);
+  font-size: clamp(14px, 4.2vw, 18px);
   line-height: 1.1;
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.3px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .case-title-accent {
   display: block;
+  white-space: nowrap;
   color: var(--accent);
 }
 
 .case-title-line2 {
   display: block;
+  white-space: nowrap;
 }
 
 .case-desc {
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
-  font-size: clamp(11px, 3.2vw, 13px);
-  line-height: 1.45;
+  font-size: clamp(10px, 2.9vw, 12px);
+  line-height: 1.4;
   color: var(--text-secondary);
   margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.case-desc-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .case-desc strong {
@@ -722,11 +735,12 @@ ul {
   font-weight: 400;
   font-size: clamp(10.5px, 3vw, 13px);
   line-height: 1.45;
-  color: var(--text-primary);
+  color: var(--text-primary);    /* белый в dark, тёмный в light */
 }
 
 .case-list li span {
   white-space: nowrap;
+  color: var(--text-primary);
 }
 
 .case-list li iconify-icon {
