@@ -761,6 +761,15 @@ ul {
   animation: growupWhiteShimmer 5s ease-in-out infinite;
 }
 
+[data-theme="light"] .case-list li strong {
+  background: linear-gradient(90deg, #1A1510, #3A3530, #1A1510, #2A2520, #1A1510);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: growupWhiteShimmer 5s ease-in-out infinite;
+}
+
 /* --- Скриншоты-доказательства (справа снизу) --- */
 .case-proof {
   display: flex;
