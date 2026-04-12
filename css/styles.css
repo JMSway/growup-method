@@ -238,6 +238,7 @@ ul {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding: 3px 3px 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -269,12 +270,12 @@ ul {
 .hero-subtitle {
   font-family: 'Gilroy', sans-serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: clamp(14px, 3.9vw, 17px);
   line-height: 1.4;
   color: var(--text-primary);
   margin-top: 12px;
   text-align: center;
-  max-width: 92%;
+  white-space: nowrap;
   margin-left: auto;
   margin-right: auto;
 }
