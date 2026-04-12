@@ -1121,6 +1121,8 @@ ul {
   font-size: 12px;
   color: var(--text-secondary);
   text-align: justify;
+  text-align-last: justify;
+  white-space: nowrap;
   margin-top: 4px;
 }
 
