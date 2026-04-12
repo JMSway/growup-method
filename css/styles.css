@@ -300,6 +300,15 @@ ul {
 
 .growup-up { animation-delay: -2.5s; }
 
+[data-theme="light"] .growup-grow,
+[data-theme="light"] .growup-up {
+  background: linear-gradient(90deg, #1A1510, #3A3530, #1A1510, #2A2520, #1A1510);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @keyframes growupWhiteShimmer {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
