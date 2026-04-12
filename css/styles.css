@@ -1420,8 +1420,13 @@ ul {
 }
 
 .step-accent {
-  color: var(--accent);
   font-weight: 700;
+  background: linear-gradient(90deg, #E8651A, #F5923A, #E8651A, #C9530F, #E8651A);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: growupShimmer 5s ease-in-out infinite;
 }
 
 /* Подчёркивание-волна под "внеконкурентное предложение" */
@@ -2253,10 +2258,12 @@ ul {
 }
 
 .outcome-line--accent {
-  color: var(--accent);
-  text-shadow:
-    0 0 12px rgba(232, 101, 26, 0.45),
-    0 0 28px rgba(232, 101, 26, 0.22);
+  background: linear-gradient(90deg, #E8651A, #F5923A, #E8651A, #C9530F, #E8651A);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: growupShimmer 5s ease-in-out infinite;
 }
 
 /* --- Карточка с иллюстрацией и чеками --- */
