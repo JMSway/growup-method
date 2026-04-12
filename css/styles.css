@@ -2096,6 +2096,58 @@ ul {
 #step-1 .step-result-text strong { font-size: clamp(8px, 2.5vw, 11px); }
 #step-1 .step-pointer iconify-icon { font-size: 15px; }
 
+/* ============================================
+   ШАГ 2 + ШАГ 3 — те же размеры что и Шаг 1
+   ============================================ */
+#step-2,
+#step-3 { padding-bottom: 48px; }
+#step-2 .step-card,
+#step-3 .step-card { padding: 18px 14px; }
+#step-2 .step-text,
+#step-3 .step-text { font-size: 12px; margin-top: 10px; }
+#step-2 .step-intro,
+#step-3 .step-intro { font-size: 12px; }
+#step-2 .step-list,
+#step-3 .step-list { gap: 6px; margin-top: 8px; }
+#step-2 .step-list li,
+#step-3 .step-list li { font-size: 12px; padding-left: 22px; }
+#step-2 .step-image-wrap,
+#step-3 .step-image-wrap { margin: 12px auto 4px; }
+#step-2 .step-image,
+#step-3 .step-image { margin: 12px auto 4px; }
+#step-2 .step-image-chat,
+#step-3 .step-image-chat { width: 74%; }
+#step-2 .step-highlight,
+#step-3 .step-highlight { padding: 10px 12px; margin-top: 12px; }
+#step-2 .step-pointer iconify-icon,
+#step-3 .step-pointer iconify-icon { font-size: 15px; }
+#step-2 .step-result,
+#step-3 .step-result { margin-top: 16px; padding: 12px 12px; }
+#step-2 .step-result-text,
+#step-3 .step-result-text { font-size: 11px; }
+#step-2 .step-result-text strong,
+#step-3 .step-result-text strong { font-size: clamp(8px, 2.5vw, 11px); }
+/* Шаг 2 специфичные */
+#step-2 .step-intro-icon { font-size: 34px; }
+#step-2 .step-tpu-block { padding: 10px 12px; margin-top: 14px; }
+#step-2 .step-tpu-icon { font-size: 18px; }
+#step-2 .step-tpu-line-1 { font-size: 11px; }
+#step-2 .step-tpu-line-2 { font-size: clamp(11px, 3.2vw, 13px); }
+#step-2 .step-tpu-label { font-size: clamp(12px, 3.6vw, 14px); margin-top: 12px; }
+#step-2 .step-list-bullets li { font-size: 12px; }
+#step-2 .step-compare { margin-top: 12px; gap: 8px; }
+/* Шаг 3 специфичные */
+#step-3 .step-headline { font-size: clamp(16px, 4.6vw, 22px); margin: 2px 0 6px; }
+#step-3 .step-headline-icon { font-size: 30px; }
+#step-3 .step-subhead { margin-top: 14px; gap: 8px; }
+#step-3 .step-subhead-icon { font-size: 18px; }
+#step-3 .step-list-large li { font-size: 14px; }
+#step-3 .step-main-line { margin-top: 14px; }
+#step-3 .step-main-line-label { font-size: clamp(16px, 4.6vw, 22px); margin-bottom: 6px; }
+#step-3 .step-main-line-icon { font-size: 22px; }
+#step-3 .step-result-row { font-size: clamp(11px, 3.2vw, 13px); }
+#step-3 .step-result-final { font-size: clamp(16px, 5vw, 24px); margin-top: 6px; padding-top: 8px; }
+
 [data-theme="light"] .step-card {
   border-color: transparent;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
