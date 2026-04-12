@@ -491,14 +491,29 @@ ul {
 .hero-highlight {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
-  font-size: 30px;
-  color: var(--accent);
+  font-size: 20px;
+  color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 8px;
+}
+
+.hero-highlight-accent {
+  color: var(--accent);
+  font-weight: 400;
   text-shadow:
     0.5px 0 0 var(--accent),
     -0.5px 0 0 var(--accent);
+}
+
+.hero-highlight-sub {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
 }
 
 .hero-next {
