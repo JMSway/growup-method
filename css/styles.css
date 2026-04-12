@@ -480,19 +480,19 @@ ul {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.5;
-  color: #FFFFFF;
+  color: var(--text-primary);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7), 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .hero-bottom .hero-bullets .bullet-success span strong {
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .hero-highlight {
   font-family: 'Gilroy', sans-serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 18px;
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -507,7 +507,7 @@ ul {
 .hero-highlight-sub {
   font-family: 'Gilroy', sans-serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 18px;
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
