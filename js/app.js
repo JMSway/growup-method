@@ -64,6 +64,21 @@ if (document.fonts && document.fonts.ready) {
 }
 window.addEventListener('resize', fitOutcomeHeadline);
 
+/* Problem cards: slide in from left, re-trigger on re-entry */
+var problemCards = document.querySelectorAll('.problem-card');
+if (problemCards.length) {
+  var problemIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+      } else {
+        e.target.classList.remove('is-visible');
+      }
+    });
+  }, { threshold: 0.3 });
+  problemCards.forEach(function (el) { problemIO.observe(el); });
+}
+
 /* Fade-in on scroll */
 var io = new IntersectionObserver(function (entries) {
   entries.forEach(function (e) {
