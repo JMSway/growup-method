@@ -670,7 +670,12 @@ ul {
 .case-title-accent {
   display: block;
   white-space: nowrap;
-  color: var(--accent);
+  background: linear-gradient(90deg, #E8651A, #F5923A, #E8651A, #C9530F, #E8651A);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: growupShimmer 5s ease-in-out infinite;
 }
 
 .case-title-line2 {
@@ -1128,22 +1133,23 @@ ul {
   padding: 14px 16px;
   margin-top: 10px;
   opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(-100%) scale(0.95);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   animation: problemFloat 8s ease-in-out infinite;
 }
 
 .problem-card:nth-child(2) {
-  transition-delay: 0.2s;
+  transition-delay: 0.25s;
 }
 
 .problem-card:nth-child(3) {
-  transition-delay: 0.4s;
+  transition-delay: 0.5s;
 }
 
 .problem-card.is-visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
 }
 
 @keyframes problemFloat {
