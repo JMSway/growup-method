@@ -1326,7 +1326,7 @@ ul {
 .step-text {
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--text-primary);
   margin-top: 14px;
@@ -1350,7 +1350,7 @@ ul {
 
 .step-intro-icon {
   flex-shrink: 0;
-  font-size: 56px;
+  font-size: 42px;
   color: var(--accent);
   filter: drop-shadow(0 0 12px rgba(232, 101, 26, 0.4));
   animation: stepIntroFloat 4s ease-in-out infinite;
