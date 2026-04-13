@@ -1784,7 +1784,7 @@ ul {
 
 .step-tpu-label {
   font-style: italic;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin-top: 16px;
   text-align: center;
   font-size: clamp(15px, 4.4vw, 17px);
