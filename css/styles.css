@@ -3724,6 +3724,280 @@ a.bonus-card:active {
 }
 
 
+/* ============================================
+   СЕКЦИЯ: FAQ
+   ============================================ */
+
+.faq {
+  position: relative;
+  padding: 48px 20px 40px;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.faq::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 20%;
+  left: -55px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 101, 26, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.faq::after {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  bottom: 25%;
+  right: -45px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 101, 26, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.faq-title {
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 6.5vw, 30px);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Trigger */
+.faq-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 20px;
+  background: rgba(23, 22, 20, 0.7);
+  border: 1.5px solid rgba(232, 101, 26, 0.4);
+  border-radius: 16px;
+  cursor: pointer;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 4vw, 17px);
+  color: var(--text-primary);
+  text-align: left;
+  line-height: 1.3;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq-trigger:active {
+  transform: scale(0.98);
+}
+
+.faq-item:not(.is-open) .faq-trigger {
+  animation: faqPulse 3s ease-in-out infinite;
+}
+
+.faq-item:nth-child(2):not(.is-open) .faq-trigger {
+  animation-delay: 0.5s;
+}
+
+.faq-item:nth-child(3):not(.is-open) .faq-trigger {
+  animation-delay: 1s;
+}
+
+@keyframes faqPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 101, 26, 0); }
+  50%      { box-shadow: 0 0 20px 2px rgba(232, 101, 26, 0.18); }
+}
+
+.faq-item.is-open .faq-trigger {
+  animation: none;
+  border-color: rgba(232, 101, 26, 0.7);
+  box-shadow: 0 0 28px 4px rgba(232, 101, 26, 0.2);
+  border-radius: 16px 16px 0 0;
+}
+
+.faq-chevron {
+  font-size: 22px;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Answer */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.faq-answer-inner {
+  position: relative;
+  padding: 20px;
+  background: rgba(17, 16, 14, 0.85);
+  border: 1px solid rgba(232, 101, 26, 0.25);
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+}
+
+.faq-answer-text {
+  position: relative;
+  z-index: 1;
+}
+
+.faq-answer-text p {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-size: clamp(13px, 3.6vw, 15px);
+  line-height: 1.55;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.faq-answer-text p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-answer-text strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Decorative icons */
+.faq-decor {
+  position: absolute;
+  display: flex;
+  pointer-events: none;
+  z-index: 0;
+  animation: shieldFloat 4s ease-in-out infinite;
+}
+
+.faq-decor--top-right {
+  top: 14px;
+  right: 14px;
+}
+
+.faq-decor--bottom-right {
+  bottom: 70px;
+  right: 14px;
+  animation-delay: 1.2s;
+}
+
+/* CTA inside FAQ */
+.faq-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #22C55E, #16A34A);
+  border-radius: 14px;
+  color: #fff;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+  -webkit-tap-highlight-color: transparent;
+  transition: filter 0.2s ease;
+}
+
+.faq-cta:active {
+  transform: scale(0.98);
+}
+
+.faq-cta-icon {
+  font-size: 22px;
+  color: #fff;
+}
+
+.faq-disclaimer {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--text-primary);
+  text-align: center;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+/* Floating WA: HelpCircle when in FAQ section */
+.floating-wa-icon--help {
+  opacity: 0;
+  transform: scale(0.6) rotate(-20deg);
+}
+
+.floating-wa.in-faq .floating-wa-icon--msg {
+  opacity: 0;
+  transform: scale(0.6) rotate(20deg);
+}
+
+.floating-wa.in-faq .floating-wa-icon--gift {
+  opacity: 0;
+  transform: scale(0.6) rotate(20deg);
+}
+
+.floating-wa.in-faq .floating-wa-icon--shield {
+  opacity: 0;
+  transform: scale(0.6) rotate(20deg);
+}
+
+.floating-wa.in-faq .floating-wa-icon--help {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+
+/* ============================================
+   ФУТЕР
+   ============================================ */
+
+.site-footer {
+  text-align: center;
+  padding: 32px 20px;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+}
+
+.footer-brand {
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  opacity: 0.6;
+}
+
+.footer-copy {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--text-primary);
+  opacity: 0.5;
+  margin-top: 6px;
+}
+
+
 /* Только лёгкое свечение в центре и снизу — БЕЗ верхнего glow
    (иначе step::before снизу + outcome::before сверху суммируются
    и создают яркую оранжевую полосу-стык) */

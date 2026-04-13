@@ -335,6 +335,48 @@ if (floatingWaEl && guaranteeSec) {
   }, { threshold: 0.3 });
   guaranteeIconIO.observe(guaranteeSec);
 }
+var faqSec = document.querySelector('[data-section="faq"]');
+if (floatingWaEl && faqSec) {
+  var faqIconIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        floatingWaEl.classList.add('in-faq');
+      } else {
+        floatingWaEl.classList.remove('in-faq');
+      }
+    });
+  }, { threshold: 0.3 });
+  faqIconIO.observe(faqSec);
+}
+
+/* FAQ accordion — one open at a time */
+var faqItems = document.querySelectorAll('.faq-item');
+if (faqItems.length) {
+  faqItems.forEach(function (item) {
+    var trigger = item.querySelector('.faq-trigger');
+    var answer = item.querySelector('.faq-answer');
+    var inner = item.querySelector('.faq-answer-inner');
+    trigger.addEventListener('click', function () {
+      var wasOpen = item.classList.contains('is-open');
+      // Close all
+      faqItems.forEach(function (other) {
+        other.classList.remove('is-open');
+        other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        other.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+      // Open this one if it was closed
+      if (!wasOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = inner.scrollHeight + 'px';
+        // Scroll to trigger after animation starts
+        setTimeout(function () {
+          trigger.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    });
+  });
+}
 
 /* Floating WhatsApp CTA: hidden → bar → circle */
 var floatingWa = document.getElementById('floating-wa');
