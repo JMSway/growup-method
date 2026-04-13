@@ -263,12 +263,13 @@ if (floatingWa && priceSection) {
     var aboveSection = rect.top > window.innerHeight;
 
     floatingWa.classList.remove('is-bar', 'is-circle');
+    if (themeToggle) themeToggle.classList.remove('wa-bar-active', 'wa-circle-active');
     if (aboveSection) {
       floatingWa.classList.add('is-circle');
       if (themeToggle) themeToggle.classList.add('wa-circle-active');
     } else {
       floatingWa.classList.add('is-bar');
-      if (themeToggle) themeToggle.classList.remove('wa-circle-active');
+      if (themeToggle) themeToggle.classList.add('wa-bar-active');
     }
   }
 
