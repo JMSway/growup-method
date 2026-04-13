@@ -242,6 +242,21 @@ if (bridge) {
   bridgeIO.observe(bridge);
 }
 
+/* Price card: animated strikethrough on enter, re-trigger on re-entry */
+var priceCard = document.getElementById('price-card');
+if (priceCard) {
+  var strikeIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        priceCard.classList.add('is-struck');
+      } else {
+        priceCard.classList.remove('is-struck');
+      }
+    });
+  }, { threshold: 0.4 });
+  strikeIO.observe(priceCard);
+}
+
 /* Floating WhatsApp CTA: hidden → bar → circle */
 var floatingWa = document.getElementById('floating-wa');
 var priceSection = document.getElementById('price-section');
