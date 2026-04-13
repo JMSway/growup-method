@@ -4566,13 +4566,14 @@ a.bonus-card:active {
 
 /* =========================================================
    ЗАЩИТА ОТ КОПИРОВАНИЯ - START
-   Блокирует выделение текста, drag картинок, long-press save.
-   НЕ трогает структуру, размеры, анимации, интерактивность.
-   Чтобы убрать: удалить весь блок между START и END маркерами.
+   Переключатель: html[data-copy-protection="on"|"off"] в index.html
+   Все правила активны только при data-copy-protection="on".
+   При "off" сайт работает как обычно (текст выделяется, меню работает).
+   Чтобы убрать навсегда: удалить весь блок между START и END маркерами.
    ========================================================= */
 
-html,
-body {
+html[data-copy-protection="on"],
+html[data-copy-protection="on"] body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4581,31 +4582,31 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-img,
-video,
-picture,
-svg {
+html[data-copy-protection="on"] img,
+html[data-copy-protection="on"] video,
+html[data-copy-protection="on"] picture,
+html[data-copy-protection="on"] svg {
   -webkit-user-drag: none;
   user-drag: none;
   -webkit-touch-callout: none;
   pointer-events: none;
 }
 
-a img,
-a picture,
-a svg,
-button img,
-button picture,
-button svg,
-[role="button"] img,
-[role="button"] picture,
-[role="button"] svg {
+html[data-copy-protection="on"] a img,
+html[data-copy-protection="on"] a picture,
+html[data-copy-protection="on"] a svg,
+html[data-copy-protection="on"] button img,
+html[data-copy-protection="on"] button picture,
+html[data-copy-protection="on"] button svg,
+html[data-copy-protection="on"] [role="button"] img,
+html[data-copy-protection="on"] [role="button"] picture,
+html[data-copy-protection="on"] [role="button"] svg {
   pointer-events: auto;
 }
 
-input,
-textarea,
-[contenteditable="true"] {
+html[data-copy-protection="on"] input,
+html[data-copy-protection="on"] textarea,
+html[data-copy-protection="on"] [contenteditable="true"] {
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;

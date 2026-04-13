@@ -516,12 +516,17 @@ if (floatingWa && priceSection) {
 
 /* =========================================================
    ЗАЩИТА ОТ КОПИРОВАНИЯ - START
-   Блокирует contextmenu, copy, cut, dragstart, selectstart.
-   НЕ влияет на структуру, вёрстку, интерактивность.
-   Чтобы убрать: удалить весь блок между START и END маркерами.
+   Переключатель: <html data-copy-protection="on"|"off"> в index.html
+   Листенеры активны только когда атрибут === "on".
+   При "off" все события пропускаются нативно.
+   Чтобы убрать навсегда: удалить весь блок между START и END маркерами.
    ========================================================= */
 (function () {
+  function isProtectionOn() {
+    return document.documentElement.getAttribute('data-copy-protection') === 'on';
+  }
   function prevent(e) {
+    if (!isProtectionOn()) return;
     var t = e.target;
     if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
     e.preventDefault();
