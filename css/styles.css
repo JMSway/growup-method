@@ -3917,6 +3917,7 @@ a.bonus-card:active {
 
 /* Carousel in FAQ answer 3 */
 .faq-carousel {
+  --faq-slide-height: 340px;
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
@@ -3928,22 +3929,27 @@ a.bonus-card:active {
   padding: 4px 0;
 }
 
+@media (min-width: 768px) {
+  .faq-carousel { --faq-slide-height: 420px; }
+}
+
 .faq-carousel::-webkit-scrollbar { display: none; }
 
 .faq-carousel-track {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   padding: 0 4px;
+  align-items: center;
 }
 
 .faq-carousel-slide {
-  flex: 0 0 78%;
-  scroll-snap-align: start;
-  border-radius: 12px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(232, 101, 26, 0.2);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(232, 101, 26, 0.25);
   background: #0D0C0B;
-  max-height: 400px;
+  height: var(--faq-slide-height);
 }
 
 .faq-carousel-slide img {
@@ -3951,7 +3957,6 @@ a.bonus-card:active {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: top;
 }
 
 .faq-carousel-hint {
