@@ -2334,11 +2334,12 @@ ul {
 .looks-simple-subtitle {
   font-family: 'Gilroy', sans-serif;
   font-weight: 600;
-  font-size: clamp(15px, 4.2vw, 18px);
+  font-size: clamp(12px, 3.4vw, 16px);
   color: var(--text-primary);
   text-align: center;
   margin-top: 12px;
   letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .looks-simple-card {
