@@ -248,6 +248,7 @@ var priceSection = document.getElementById('price-section');
 var themeToggle = document.querySelector('.theme-toggle');
 if (floatingWa && priceSection) {
   var hasSeen = false;
+  var currentState = 'hidden';
   var rafId = null;
 
   var priceIO = new IntersectionObserver(function (entries) {
@@ -257,20 +258,31 @@ if (floatingWa && priceSection) {
   }, { threshold: 0.15 });
   priceIO.observe(priceSection);
 
+  function setFloatingState(newState) {
+    if (newState === currentState) return;
+    currentState = newState;
+
+    floatingWa.classList.remove('is-bar', 'is-bar-exit', 'is-circle', 'is-circle-idle');
+    if (themeToggle) themeToggle.classList.remove('wa-bar-active', 'wa-circle-active');
+
+    if (newState === 'bar') {
+      floatingWa.classList.add('is-bar');
+      if (themeToggle) themeToggle.classList.add('wa-bar-active');
+    } else if (newState === 'circle') {
+      floatingWa.classList.add('is-circle');
+      if (themeToggle) themeToggle.classList.add('wa-circle-active');
+      // Add pulse after entrance animation finishes
+      setTimeout(function () {
+        if (currentState === 'circle') floatingWa.classList.add('is-circle-idle');
+      }, 500);
+    }
+  }
+
   function updateFloatingState() {
     if (!hasSeen) return;
     var rect = priceSection.getBoundingClientRect();
     var aboveSection = rect.top > window.innerHeight;
-
-    floatingWa.classList.remove('is-bar', 'is-circle');
-    if (themeToggle) themeToggle.classList.remove('wa-bar-active', 'wa-circle-active');
-    if (aboveSection) {
-      floatingWa.classList.add('is-circle');
-      if (themeToggle) themeToggle.classList.add('wa-circle-active');
-    } else {
-      floatingWa.classList.add('is-bar');
-      if (themeToggle) themeToggle.classList.add('wa-bar-active');
-    }
+    setFloatingState(aboveSection ? 'circle' : 'bar');
   }
 
   window.addEventListener('scroll', function () {
