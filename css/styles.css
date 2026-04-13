@@ -3645,7 +3645,6 @@ a.bonus-card:active {
 .guarantee-shield img {
   width: 160px;
   height: auto;
-  filter: drop-shadow(0 0 30px rgba(232, 101, 26, 0.35)) drop-shadow(0 0 60px rgba(232, 101, 26, 0.15));
 }
 
 @keyframes shieldFloat {
