@@ -3730,7 +3730,7 @@ a.bonus-card:active {
 
 .faq {
   position: relative;
-  padding: 48px 20px 40px;
+  padding: 32px 20px 40px;
   max-width: 480px;
   margin: 0 auto;
   overflow: hidden;
@@ -3775,26 +3775,40 @@ a.bonus-card:active {
   filter: blur(1px);
 }
 
+.faq-bg-question {
+  position: absolute;
+  right: -40px;
+  bottom: 60px;
+  width: 220px;
+  height: auto;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(1px);
+}
+
 .faq-heading {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 36px;
+  gap: 6px;
+  margin-bottom: 24px;
 }
 
 .faq-heading-image {
   display: block;
   width: auto;
-  max-width: 240px;
+  max-width: 200px;
   height: auto;
   object-fit: contain;
+  margin: 0;
+  padding: 0;
   animation: shieldFloat 4s ease-in-out infinite;
   filter: drop-shadow(0 8px 24px rgba(232, 101, 26, 0.25));
 }
 
 @media (min-width: 768px) {
-  .faq-heading-image { max-width: 280px; }
+  .faq-heading-image { max-width: 240px; }
 }
 
 .faq-title {
