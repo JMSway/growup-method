@@ -2243,7 +2243,7 @@ ul {
 #step-1 .step-choices { gap: 8px; margin-top: 10px; }
 #step-1 .step-choices li { font-size: 12px; gap: 8px; }
 #step-1 .step-choices li iconify-icon { width: 15px; height: 15px; font-size: 15px; }
-#step-1 .step-obvious { margin-top: 10px; margin-bottom: 14px; font-size: 12px; }
+#step-1 .step-obvious { margin-top: 10px; margin-bottom: 14px; font-size: 15px; }
 #step-1 .step-image-caption { font-size: 7px; margin-top: 4px; white-space: nowrap; }
 #step-1 > .step-card > .step-image { width: 85%; }
 #step-1 .step-result { margin-top: 16px; padding: 12px 12px; }
