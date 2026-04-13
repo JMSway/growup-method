@@ -242,6 +242,34 @@ if (bridge) {
   bridgeIO.observe(bridge);
 }
 
+/* Bonuses: animated strikethrough on enter, re-trigger on re-entry */
+var bonusesCards = document.getElementById('bonuses-cards');
+if (bonusesCards) {
+  var bonusIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        bonusesCards.classList.add('is-struck');
+      } else {
+        bonusesCards.classList.remove('is-struck');
+      }
+    });
+  }, { threshold: 0.3 });
+  bonusIO.observe(bonusesCards);
+}
+var bonusesSection = document.getElementById('bonuses');
+if (bonusesSection) {
+  var bonusSectionIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        bonusesSection.classList.add('is-struck');
+      } else {
+        bonusesSection.classList.remove('is-struck');
+      }
+    });
+  }, { threshold: 0.2 });
+  bonusSectionIO.observe(bonusesSection);
+}
+
 /* Price card: animated strikethrough on enter, re-trigger on re-entry */
 var priceCard = document.getElementById('price-card');
 if (priceCard) {

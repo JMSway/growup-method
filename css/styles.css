@@ -3089,6 +3089,188 @@ ul {
 }
 
 
+/* ============================================
+   СЕКЦИЯ: БОНУСЫ
+   ============================================ */
+
+.bonuses {
+  position: relative;
+  padding: 40px 20px 40px;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bonuses-gift {
+  margin-bottom: 14px;
+}
+
+.bonuses-gift img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.bonuses-pill {
+  display: inline-block;
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 4vw, 18px);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--accent);
+  background: rgba(232, 101, 26, 0.08);
+  color: var(--accent);
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
+.bonuses-subtitle {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 3.8vw, 16px);
+  color: var(--text-primary);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+.bonuses-subtitle .text-accent {
+  -webkit-text-fill-color: transparent;
+}
+
+.bonuses-cards {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bonus-card {
+  padding: 16px 16px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid rgba(232, 101, 26, 0.2);
+  text-align: left;
+}
+
+.bonus-num {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.bonus-icon {
+  font-size: 16px;
+  color: var(--accent);
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.bonus-name {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 700;
+  font-size: clamp(13px, 3.6vw, 15px);
+  color: var(--text-primary);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.bonus-desc {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 3.2vw, 13px);
+  color: var(--text-secondary);
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+.bonus-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.bonus-price-label {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.bonus-price-sum {
+  position: relative;
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 5vw, 22px);
+  color: var(--text-muted);
+  display: inline-block;
+}
+
+.bonus-strike {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  width: 110%;
+  height: 8px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.bonus-strike line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.bonuses-cards.is-struck .bonus-strike line {
+  stroke-dashoffset: 0;
+}
+
+.bonuses-cards.is-struck .bonus-card:nth-child(2) .bonus-strike line {
+  transition-delay: 0.25s;
+}
+
+.bonuses-cards.is-struck .bonus-card:nth-child(3) .bonus-strike line {
+  transition-delay: 0.5s;
+}
+
+.bonuses-total {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 3.8vw, 16px);
+  color: var(--text-primary);
+  margin-top: 20px;
+}
+
+.bonuses-total-sum {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.bonuses.is-struck .bonuses-total-sum .bonus-strike line {
+  stroke-dashoffset: 0;
+  transition-delay: 0.75s;
+}
+
+.bonuses-total-free {
+  font-weight: 800;
+  background: linear-gradient(90deg, #E8651A, #F5923A, #E8651A);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: growupShimmer 5s ease-in-out infinite;
+}
+
+
 /* Только лёгкое свечение в центре и снизу — БЕЗ верхнего glow
    (иначе step::before снизу + outcome::before сверху суммируются
    и создают яркую оранжевую полосу-стык) */
