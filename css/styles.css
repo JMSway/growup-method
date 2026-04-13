@@ -3783,35 +3783,18 @@ a.bonus-card:active {
   margin-bottom: 36px;
 }
 
-.faq-heading-icon-wrap {
-  width: 96px;
-  height: 96px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(232, 101, 26, 0.2) 0%, rgba(232, 101, 26, 0.06) 50%, transparent 100%);
+.faq-heading-image {
+  display: block;
+  width: auto;
+  max-width: 240px;
+  height: auto;
+  object-fit: contain;
   animation: shieldFloat 4s ease-in-out infinite;
-  position: relative;
+  filter: drop-shadow(0 8px 24px rgba(232, 101, 26, 0.25));
 }
 
-.faq-heading-icon-wrap::before {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(232, 101, 26, 0.35);
-  animation: faqRingPulse 3s ease-in-out infinite;
-}
-
-@keyframes faqRingPulse {
-  0%, 100% { transform: scale(1); opacity: 0.4; }
-  50%      { transform: scale(1.1); opacity: 0.8; }
-}
-
-.faq-heading-icon {
-  font-size: 48px;
-  color: var(--accent);
+@media (min-width: 768px) {
+  .faq-heading-image { max-width: 280px; }
 }
 
 .faq-title {
