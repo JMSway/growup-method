@@ -2305,7 +2305,7 @@ ul {
 .looks-simple-title {
   font-family: 'Oswald', 'Bebas Neue', sans-serif;
   font-weight: 700;
-  font-size: clamp(24px, 7vw, 32px);
+  font-size: clamp(20px, 5.8vw, 26px);
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
@@ -2318,10 +2318,23 @@ ul {
   animation: growupShimmer 5s ease-in-out infinite;
 }
 
+.ls-dots {
+  display: inline;
+  margin-left: 1px;
+}
+
+.ls-dot {
+  display: inline-block;
+}
+
+.ls-dot:nth-child(1) { opacity: 1; }
+.ls-dot:nth-child(2) { animation: dotAppear 2s ease-in-out infinite; }
+.ls-dot:nth-child(3) { animation: dotAppear 2s ease-in-out 0.4s infinite; }
+
 .looks-simple-subtitle {
   font-family: 'Gilroy', sans-serif;
   font-weight: 600;
-  font-size: clamp(13px, 3.6vw, 16px);
+  font-size: clamp(15px, 4.2vw, 18px);
   color: var(--text-primary);
   text-align: center;
   margin-top: 12px;
@@ -2379,7 +2392,7 @@ ul {
 .looks-simple-chat img {
   width: 65%;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(232, 101, 26, 0.08);
 }
 
 
