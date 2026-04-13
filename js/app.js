@@ -132,6 +132,23 @@ var io = new IntersectionObserver(function (entries) {
 
 document.querySelectorAll('.fade-up').forEach(function (el) { io.observe(el); });
 
+/* Hand-drawn oval on review screenshot: draw on enter, re-trigger on re-entry */
+var ovalWrap = document.querySelector('.step-review-oval-wrap');
+if (ovalWrap) {
+  var ovalIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        ovalWrap.classList.remove('is-oval-drawn');
+        void ovalWrap.offsetWidth;
+        ovalWrap.classList.add('is-oval-drawn');
+      } else {
+        ovalWrap.classList.remove('is-oval-drawn');
+      }
+    });
+  }, { threshold: 0.5 });
+  ovalIO.observe(ovalWrap);
+}
+
 /* Step 3 result curve: charge line on enter, re-trigger on re-entry */
 var resultCurves = document.querySelectorAll('.step-result--3');
 if (resultCurves.length) {
