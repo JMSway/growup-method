@@ -2439,6 +2439,101 @@ ul {
 }
 
 
+/* ============================================
+   СЕКЦИЯ: ВСЕ ОТВЕТЫ УЖЕ НАЙДЕНЫ
+   ============================================ */
+
+.all-answers {
+  position: relative;
+  padding: 48px 20px 40px;
+  max-width: 480px;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+.all-answers::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 180px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, rgba(232, 101, 26, 0.14), transparent 70%);
+  filter: blur(30px);
+}
+
+.all-answers-title {
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 7vw, 34px);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 0.3px;
+  background: linear-gradient(90deg, #E8651A, #F5923A, #E8651A, #C9530F, #E8651A);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: growupShimmer 5s ease-in-out infinite;
+}
+
+.all-answers-subtitle {
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 4vw, 18px);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+}
+
+.all-answers-list {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.all-answers-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.all-answers-num {
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 10vw, 52px);
+  line-height: 0.85;
+  background: linear-gradient(180deg, #F5923A, #E8651A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex-shrink: 0;
+  min-width: 34px;
+  text-align: right;
+}
+
+.all-answers-text {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-size: clamp(13px, 3.6vw, 15px);
+  line-height: 1.45;
+  color: var(--text-primary);
+  padding-top: 4px;
+}
+
+.all-answers-text .text-accent {
+  -webkit-text-fill-color: transparent;
+}
+
+
 /* Только лёгкое свечение в центре и снизу — БЕЗ верхнего glow
    (иначе step::before снизу + outcome::before сверху суммируются
    и создают яркую оранжевую полосу-стык) */
