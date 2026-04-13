@@ -3101,17 +3101,9 @@ ul {
   text-align: center;
 }
 
-/* Gift + tinsel wrapper */
+/* Gift icon */
 .bonuses-gift {
-  position: relative;
-  width: fit-content;
   margin: 0 auto 8px;
-}
-
-.bonuses-gift picture {
-  position: relative;
-  z-index: 1;
-  display: block;
 }
 
 .bonuses-gift picture img {
@@ -3124,9 +3116,9 @@ ul {
 
 @keyframes giftFloat8 {
   0%   { transform: translate(0, 0); }
-  25%  { transform: translate(10px, -12px); }
+  25%  { transform: translate(5px, -6px); }
   50%  { transform: translate(0, 0); }
-  75%  { transform: translate(-10px, -12px); }
+  75%  { transform: translate(-5px, -6px); }
   100% { transform: translate(0, 0); }
 }
 
