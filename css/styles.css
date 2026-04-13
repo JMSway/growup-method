@@ -2255,6 +2255,8 @@ ul {
   line-height: 1.5;
   color: var(--text-primary);
   text-align: center;
+  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .step-result-text strong {
@@ -4105,6 +4107,41 @@ a.bonus-card:active {
 .floating-wa.in-faq .floating-wa-icon--help {
   opacity: 1;
   transform: scale(1) rotate(0deg);
+}
+
+
+/* Light theme overrides for FAQ + Guarantee + Footer */
+[data-theme="light"] .faq-trigger {
+  background: rgba(240, 234, 227, 0.8);
+  border-color: rgba(232, 101, 26, 0.35);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .faq-item.is-open .faq-trigger {
+  border-color: rgba(232, 101, 26, 0.6);
+}
+
+[data-theme="light"] .faq-answer-inner {
+  background: rgba(240, 234, 227, 0.95);
+  border-color: rgba(232, 101, 26, 0.35);
+}
+
+[data-theme="light"] .faq-answer-text p {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .faq-answer-text strong {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .faq-disclaimer {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .guarantee-text,
+[data-theme="light"] .guarantee-text strong,
+[data-theme="light"] .guarantee-quote {
+  color: var(--text-primary);
 }
 
 
