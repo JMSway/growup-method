@@ -4563,3 +4563,56 @@ a.bonus-card:active {
     transition: none !important;
   }
 }
+
+/* =========================================================
+   ЗАЩИТА ОТ КОПИРОВАНИЯ - START
+   Блокирует выделение текста, drag картинок, long-press save.
+   НЕ трогает структуру, размеры, анимации, интерактивность.
+   Чтобы убрать: удалить весь блок между START и END маркерами.
+   ========================================================= */
+
+html,
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+video,
+picture,
+svg {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
+}
+
+a img,
+a picture,
+a svg,
+button img,
+button picture,
+button svg,
+[role="button"] img,
+[role="button"] picture,
+[role="button"] svg {
+  pointer-events: auto;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* =========================================================
+   ЗАЩИТА ОТ КОПИРОВАНИЯ - END
+   ========================================================= */

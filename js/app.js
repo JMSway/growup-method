@@ -513,3 +513,25 @@ if (floatingWa && priceSection) {
     });
   }, { passive: true });
 }
+
+/* =========================================================
+   ЗАЩИТА ОТ КОПИРОВАНИЯ - START
+   Блокирует contextmenu, copy, cut, dragstart, selectstart.
+   НЕ влияет на структуру, вёрстку, интерактивность.
+   Чтобы убрать: удалить весь блок между START и END маркерами.
+   ========================================================= */
+(function () {
+  function prevent(e) {
+    var t = e.target;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+    e.preventDefault();
+  }
+  document.addEventListener('contextmenu', prevent);
+  document.addEventListener('dragstart', prevent);
+  document.addEventListener('copy', prevent);
+  document.addEventListener('cut', prevent);
+  document.addEventListener('selectstart', prevent);
+})();
+/* =========================================================
+   ЗАЩИТА ОТ КОПИРОВАНИЯ - END
+   ========================================================= */
