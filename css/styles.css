@@ -3762,6 +3762,19 @@ a.bonus-card:active {
   z-index: 0;
 }
 
+.faq-fire {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: auto;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(1px);
+}
+
 .faq-heading {
   display: flex;
   flex-direction: column;
