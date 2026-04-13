@@ -2730,6 +2730,7 @@ ul {
   position: relative;
   padding: 48px 20px 40px;
   max-width: 480px;
+  text-align: center;
   margin: 0 auto;
 }
 
@@ -2750,13 +2751,6 @@ ul {
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   color: var(--accent);
-}
-
-.price-section > .price-title {
-  display: block;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .price-anchor {
