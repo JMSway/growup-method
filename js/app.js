@@ -125,6 +125,45 @@ if (underlineTargets.length) {
   underlineTargets.forEach(function (el) { underlineIO.observe(el); });
 }
 
+/* Example accordion: toggle + auto-collapse when scrolled away */
+var exAccordion = document.getElementById('example-accordion');
+var exToggle = document.getElementById('example-toggle');
+var exBody = document.getElementById('example-body');
+if (exAccordion && exToggle && exBody) {
+  var exToggleText = exToggle.querySelector('.example-toggle-text');
+  var exInner = exBody.querySelector('.example-body-inner');
+
+  function openExample() {
+    var h = exInner.scrollHeight;
+    exBody.style.maxHeight = h + 'px';
+    exAccordion.classList.add('is-open');
+    exToggleText.textContent = 'Свернуть пример';
+  }
+
+  function closeExample() {
+    exBody.style.maxHeight = '0';
+    exAccordion.classList.remove('is-open');
+    exToggleText.textContent = 'Показать пример';
+  }
+
+  exToggle.addEventListener('click', function () {
+    if (exAccordion.classList.contains('is-open')) {
+      closeExample();
+    } else {
+      openExample();
+    }
+  });
+
+  var exIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting && exAccordion.classList.contains('is-open')) {
+        closeExample();
+      }
+    });
+  }, { threshold: 0 });
+  exIO.observe(exAccordion);
+}
+
 /* Bridge: light up words on scroll, fade back, re-trigger on re-entry */
 var bridge = document.querySelector('.bridge');
 if (bridge) {

@@ -1953,6 +1953,62 @@ ul {
   font-style: italic;
 }
 
+/* --- Example Accordion --- */
+.example-accordion {
+  position: relative;
+}
+
+.example-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 20px;
+  min-height: 44px;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.example-toggle:active {
+  background: rgba(232, 101, 26, 0.15);
+}
+
+@media (hover: hover) {
+  .example-toggle:hover {
+    background: rgba(232, 101, 26, 0.08);
+  }
+}
+
+.example-toggle-arrow {
+  font-size: 16px;
+  transition: transform 0.35s ease;
+}
+
+.example-accordion.is-open .example-toggle-arrow {
+  transform: rotate(180deg);
+}
+
+.example-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-in-out, opacity 0.35s ease-in-out;
+}
+
+.example-accordion.is-open .example-body {
+  opacity: 1;
+}
+
 /* Заголовок «Расскажу на примере» */
 .step-example-title {
   font-family: 'Bebas Neue', sans-serif;
