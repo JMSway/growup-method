@@ -2300,12 +2300,25 @@ ul {
   padding: 48px 20px 40px;
   max-width: 480px;
   margin: 0 auto;
+  isolation: isolate;
+}
+
+.looks-simple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 50% at 50% 0%, rgba(232, 101, 26, 0.1), transparent 75%);
 }
 
 .looks-simple-title {
   font-family: 'Oswald', 'Bebas Neue', sans-serif;
   font-weight: 700;
-  font-size: clamp(20px, 5.8vw, 26px);
+  font-size: clamp(22px, 6.5vw, 30px);
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
@@ -2391,10 +2404,11 @@ ul {
 
 .looks-simple-chat picture {
   display: inline-block;
+  width: 55%;
 }
 
 .looks-simple-chat img {
-  width: 55%;
+  width: 100%;
   border-radius: 16px;
   border: 1.5px solid rgba(232, 101, 26, 0.35);
   box-shadow:
