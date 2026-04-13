@@ -285,6 +285,22 @@ if (priceCard) {
   strikeIO.observe(priceCard);
 }
 
+/* Floating WA icon swap: Gift when in BonusesSection */
+var floatingWaEl = document.getElementById('floating-wa');
+var bonusesSec = document.querySelector('[data-section="bonuses"]');
+if (floatingWaEl && bonusesSec) {
+  var bonusIconIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        floatingWaEl.classList.add('in-bonuses');
+      } else {
+        floatingWaEl.classList.remove('in-bonuses');
+      }
+    });
+  }, { threshold: 0.3 });
+  bonusIconIO.observe(bonusesSec);
+}
+
 /* Floating WhatsApp CTA: hidden → bar → circle */
 var floatingWa = document.getElementById('floating-wa');
 var priceSection = document.getElementById('price-section');

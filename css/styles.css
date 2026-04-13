@@ -2963,13 +2963,44 @@ ul {
   transform: translateY(100px) scale(0.92);
 }
 
-.floating-wa-icon {
-  font-size: 24px;
-  color: #fff;
+.floating-wa-icon-wrap {
+  position: relative;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.floating-wa-icon {
+  font-size: 24px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.floating-wa-icon--msg {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.floating-wa-icon--gift {
+  opacity: 0;
+  transform: scale(0.6) rotate(-20deg);
+}
+
+/* When in bonuses section */
+.floating-wa.in-bonuses .floating-wa-icon--msg {
+  opacity: 0;
+  transform: scale(0.6) rotate(20deg);
+}
+
+.floating-wa.in-bonuses .floating-wa-icon--gift {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 .floating-wa-text {
