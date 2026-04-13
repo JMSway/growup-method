@@ -2812,12 +2812,12 @@ ul {
 
 .price-section {
   position: relative;
-  padding: 48px 20px 40px;
+  padding: 48px 20px 60px;
   max-width: 480px;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: -1px;
-  overflow: hidden;
+  margin-bottom: -20px;
+  z-index: 1;
 }
 
 .price-section::before {
@@ -3241,7 +3241,7 @@ ul {
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
-  box-shadow: 0 -40px 60px -20px rgba(232, 101, 26, 0.15);
+  padding-top: 36px;
 }
 
 /* Scattered ambient orange glows */
@@ -3426,7 +3426,7 @@ a.bonus-card:active {
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
   font-size: clamp(10px, 2.7vw, 11px);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin-top: 2px;
   line-height: 1.35;
 }
@@ -3506,7 +3506,7 @@ a.bonus-card:active {
 
 .bonuses-total-free {
   font-weight: 800;
-  font-size: 1.1em;
+  font-size: 1.4em;
   background: linear-gradient(90deg, #E8651A, #F5923A, #E8651A);
   background-size: 300% 100%;
   -webkit-background-clip: text;
