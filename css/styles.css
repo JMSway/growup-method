@@ -1606,6 +1606,14 @@ ul {
   }
 }
 
+/* Hand-drawn oval for Step 2 chat screenshot */
+.step-oval-2 .hand-drawn-oval {
+  top: 64%;
+  left: 8%;
+  width: 84%;
+  height: 16%;
+}
+
 /* Чат шага 2 — без парения */
 .step-image-chat {
   width: 82%;
@@ -2343,8 +2351,8 @@ ul {
 #step-2 .step-image-chat,
 #step-3 .step-image-chat { width: 74%; }
 /* Lead — highlight (13→17) */
-#step-2 .step-highlight,
-#step-3 .step-highlight { padding: 10px 12px; margin-top: 12px; font-size: 15px; font-weight: 500; line-height: 1.55; }
+#step-2 .step-highlight { padding: 10px 12px; margin-top: 12px; font-size: 15px; font-weight: 500; line-height: 1.55; }
+#step-3 .step-highlight { padding: 10px 12px; margin-top: 12px; font-size: 14px; font-weight: 500; line-height: 1.55; }
 #step-2 .step-pointer iconify-icon,
 #step-3 .step-pointer iconify-icon { font-size: 15px; }
 /* Lead — result (11→17) */
