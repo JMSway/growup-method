@@ -2267,7 +2267,7 @@ ul {
   text-transform: uppercase;
   font-size: clamp(10px, 3.1vw, 13px);
   letter-spacing: 0.3px;
-  white-space: nowrap;
+  overflow-wrap: break-word;
 }
 
 /* Шаг 2 — заголовок итога крупнее (+4px) */
@@ -2308,7 +2308,7 @@ ul {
 /* Body — obvious */
 #step-1 .step-obvious { margin-top: 10px; margin-bottom: 14px; font-size: 15px; }
 /* Caption — image captions */
-#step-1 .step-image-caption { font-size: 11px; margin-top: 4px; white-space: nowrap; font-style: italic; opacity: 0.6; }
+#step-1 .step-image-caption { font-size: 11px; margin-top: 4px; font-style: italic; opacity: 0.6; }
 #step-1 > .step-card > .step-image { width: 85%; }
 /* Lead — result block (was 11px → 17px) */
 #step-1 .step-result { margin-top: 16px; padding: 14px 14px; }
@@ -2329,7 +2329,7 @@ ul {
 #step-3 .step-text { font-size: 15px; margin-top: 10px; line-height: 1.55; }
 /* Lead — intro (14→17) */
 #step-2 .step-intro,
-#step-3 .step-intro { font-size: 17px; text-align: center; color: var(--text-primary); font-weight: 500; line-height: 1.55; }
+#step-3 .step-intro { font-size: 15px; text-align: left; color: var(--text-primary); font-weight: 500; line-height: 1.55; }
 /* Small — bullet lists (12→14) */
 #step-2 .step-list,
 #step-3 .step-list { gap: 6px; margin-top: 8px; }
@@ -2344,7 +2344,7 @@ ul {
 #step-3 .step-image-chat { width: 74%; }
 /* Lead — highlight (13→17) */
 #step-2 .step-highlight,
-#step-3 .step-highlight { padding: 10px 12px; margin-top: 12px; font-size: 17px; font-weight: 500; line-height: 1.55; }
+#step-3 .step-highlight { padding: 10px 12px; margin-top: 12px; font-size: 15px; font-weight: 500; line-height: 1.55; }
 #step-2 .step-pointer iconify-icon,
 #step-3 .step-pointer iconify-icon { font-size: 15px; }
 /* Lead — result (11→17) */
