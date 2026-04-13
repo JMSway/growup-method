@@ -362,16 +362,16 @@ var faqItems = document.querySelectorAll('.faq-item');
 if (faqItems.length) {
   var faqHasInteracted = false;
 
-  /* Attention pulse on triggers before first interaction */
+  /* Attention shake on triggers before first interaction — wave pattern */
   var faqAttentionTimer = setInterval(function () {
     if (faqHasInteracted) { clearInterval(faqAttentionTimer); return; }
     faqItems.forEach(function (item, idx) {
       if (item.classList.contains('is-open')) return;
       setTimeout(function () {
         var t = item.querySelector('.faq-trigger');
-        t.classList.add('btn-nudge');
-        setTimeout(function () { t.classList.remove('btn-nudge'); }, 600);
-      }, idx * 400);
+        t.classList.add('faq-nudge');
+        setTimeout(function () { t.classList.remove('faq-nudge'); }, 700);
+      }, idx * 600);
     });
   }, 4000);
 
