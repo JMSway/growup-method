@@ -2734,19 +2734,29 @@ ul {
 }
 
 .price-title {
+  display: inline-block;
   font-family: 'Oswald', 'Bebas Neue', sans-serif;
   font-weight: 700;
-  font-size: clamp(22px, 6.5vw, 30px);
+  font-size: clamp(16px, 4.8vw, 22px);
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
   letter-spacing: 0.3px;
-  background: linear-gradient(90deg, #E8651A, #F5923A, #E8651A, #C9530F, #E8651A);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: growupShimmer 5s ease-in-out infinite;
+  white-space: nowrap;
+  padding: 10px 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(232, 101, 26, 0.3);
+  background: rgba(232, 101, 26, 0.06);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--accent);
+}
+
+.price-section > .price-title {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .price-anchor {
@@ -2757,7 +2767,7 @@ ul {
 .price-anchor-text {
   font-family: 'Gilroy', sans-serif;
   font-weight: 500;
-  font-size: clamp(15px, 4.2vw, 18px);
+  font-size: clamp(14px, 3.8vw, 16px);
   color: var(--text-primary);
   line-height: 1.5;
 }
