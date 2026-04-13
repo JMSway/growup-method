@@ -3256,16 +3256,16 @@ ul {
 .bonus-num {
   font-family: 'Gilroy', sans-serif;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 18px;
   color: var(--accent);
   text-transform: uppercase;
 }
 
 .bonus-icon {
-  font-size: 14px;
+  font-size: 18px;
   color: var(--accent);
   vertical-align: middle;
-  margin-left: 2px;
+  margin-left: 4px;
 }
 
 .bonus-name {
