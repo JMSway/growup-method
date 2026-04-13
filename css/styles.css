@@ -2037,6 +2037,13 @@ ul {
   font-size: 22px;
   color: var(--accent);
   opacity: 0.7;
+  filter: drop-shadow(0 0 0px transparent);
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.example-accordion.is-open .step-example-icon {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(232, 101, 26, 0.7)) drop-shadow(0 0 20px rgba(232, 101, 26, 0.35));
 }
 
 /* Варианты выбора */
