@@ -2795,6 +2795,32 @@ ul {
   margin-top: 4px;
 }
 
+.price-final-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  margin-top: 24px;
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.price-final-link:active {
+  transform: scale(0.98);
+  transition: transform 0.12s ease;
+}
+
+@media (hover: hover) {
+  .price-final-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 36px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.price-final-link .price-final {
+  margin-top: 0;
+}
+
 .price-final {
   margin-top: 24px;
   padding: 20px 18px;
