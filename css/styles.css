@@ -2495,6 +2495,9 @@ ul {
 
 .all-answers-list {
   margin-top: 24px;
+  padding: 22px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(232, 101, 26, 0.12);
   display: flex;
   flex-direction: column;
   gap: 16px;
