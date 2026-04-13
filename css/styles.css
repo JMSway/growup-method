@@ -1619,10 +1619,10 @@ ul {
 
 /* Hand-drawn oval for Step 3 chat screenshot */
 .step-oval-3 .hand-drawn-oval {
-  top: 72%;
-  left: 3%;
-  width: 94%;
-  height: 22%;
+  top: 70%;
+  left: 8%;
+  width: 96%;
+  height: 26%;
 }
 
 /* Чат шага 2 — без парения */
@@ -2595,13 +2595,12 @@ ul {
   display: block;
 }
 
-.ls-marker-oval {
-  position: absolute;
-  bottom: -16%;
-  left: -4%;
-  width: 108%;
-  height: auto;
-  pointer-events: none;
+/* Hand-drawn oval for LooksSimple chat screenshot */
+.step-oval-ls .hand-drawn-oval {
+  top: 70%;
+  left: 2%;
+  width: 90%;
+  height: 22%;
 }
 
 .looks-simple-chat img {
