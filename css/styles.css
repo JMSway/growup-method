@@ -3303,9 +3303,10 @@ ul {
 
 .bonus-price-sum {
   position: relative;
-  font-family: 'Oswald', 'Bebas Neue', sans-serif;
-  font-weight: 700;
-  font-size: clamp(16px, 4.5vw, 20px);
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: clamp(20px, 5.5vw, 26px);
+  letter-spacing: 1.5px;
   color: var(--text-primary);
   display: inline-block;
 }
@@ -3315,26 +3316,26 @@ ul {
   top: 50%;
   left: -5%;
   width: 110%;
-  height: 8px;
+  height: 10px;
   transform: translateY(-50%);
   pointer-events: none;
 }
 
-.bonus-strike line {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
+.bonus-strike path {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
   transition: stroke-dashoffset 0.7s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.bonuses-cards.is-struck .bonus-strike line {
+.bonuses-cards.is-struck .bonus-strike path {
   stroke-dashoffset: 0;
 }
 
-.bonuses-cards.is-struck .bonus-card:nth-child(2) .bonus-strike line {
+.bonuses-cards.is-struck .bonus-card:nth-child(2) .bonus-strike path {
   transition-delay: 0.15s;
 }
 
-.bonuses-cards.is-struck .bonus-card:nth-child(3) .bonus-strike line {
+.bonuses-cards.is-struck .bonus-card:nth-child(3) .bonus-strike path {
   transition-delay: 0.3s;
 }
 
@@ -3353,7 +3354,7 @@ ul {
   color: var(--text-primary);
 }
 
-.bonuses.is-struck .bonuses-total-sum .bonus-strike line {
+.bonuses.is-struck .bonuses-total-sum .bonus-strike path {
   stroke-dashoffset: 0;
   transition-delay: 0.5s;
 }
