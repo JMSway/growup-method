@@ -2004,6 +2004,19 @@ ul {
   -webkit-tap-highlight-color: transparent;
 }
 
+.example-toggle.btn-nudge {
+  animation: btnNudge 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes btnNudge {
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-3px); }
+  30%  { transform: translateX(2px); }
+  45%  { transform: translateX(-2px); }
+  60%  { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
 .example-accordion {
   position: relative;
   display: flex;
@@ -3131,12 +3144,13 @@ ul {
 }
 
 @keyframes waNudge {
-  0%   { transform: translateY(0) scale(1); }
-  20%  { transform: translateY(-4px) scale(1.02); }
-  40%  { transform: translateY(2px) scale(0.99); }
-  60%  { transform: translateY(-2px) scale(1.01); }
-  80%  { transform: translateY(1px) scale(1); }
-  100% { transform: translateY(0) scale(1); }
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-4px); }
+  30%  { transform: translateX(3px); }
+  45%  { transform: translateX(-2px); }
+  60%  { transform: translateX(1px); }
+  75%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
 }
 
 @keyframes slideUpBounce {
@@ -3592,16 +3606,16 @@ a.bonus-card:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px auto 12px;
-  width: 150px;
-  height: 150px;
-  z-index: 2;
+  margin: -10px auto 0;
+  width: 200px;
+  height: 180px;
+  z-index: 0;
 }
 
 .guarantee-shield-glow {
   position: absolute;
-  width: 220px;
-  height: 220px;
+  width: 260px;
+  height: 260px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -3618,7 +3632,7 @@ a.bonus-card:active {
 }
 
 .guarantee-shield img {
-  width: 150px;
+  width: 188px;
   height: auto;
   filter: drop-shadow(0 0 30px rgba(232, 101, 26, 0.35)) drop-shadow(0 0 60px rgba(232, 101, 26, 0.15));
 }

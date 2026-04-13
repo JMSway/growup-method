@@ -195,6 +195,13 @@ if (exAccordion && exToggle && exBody) {
     });
   }, { threshold: 0 });
   exIO.observe(exAccordion);
+
+  /* Periodic nudge for "Показать пример" button every 4s */
+  setInterval(function () {
+    if (exAccordion.classList.contains('is-open')) return;
+    exToggle.classList.add('btn-nudge');
+    setTimeout(function () { exToggle.classList.remove('btn-nudge'); }, 600);
+  }, 4000);
 }
 
 /* Outcome icons: roll-in wheel animation, re-trigger on re-entry */
