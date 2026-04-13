@@ -2557,7 +2557,7 @@ ul {
 .how-much-bg {
   position: absolute;
   bottom: -10px;
-  right: -20px;
+  left: -30px;
   width: 180px;
   height: 180px;
   z-index: 0;
@@ -2624,11 +2624,12 @@ ul {
 
 .how-much-icon {
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  font-size: 26px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
   color: var(--accent);
-  margin-top: 1px;
+  opacity: 0.4;
+  margin-top: 2px;
 }
 
 .how-much-text {
@@ -2640,7 +2641,13 @@ ul {
 }
 
 .how-much-text .text-accent {
+  font-weight: 800;
+  background: linear-gradient(90deg, #F2EDE8, #FFFFFF, #E8E0D8, #FFFFFF, #F2EDE8);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: growupWhiteShimmer 5s ease-in-out infinite;
 }
 
 .how-much-closing {
