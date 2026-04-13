@@ -241,3 +241,42 @@ if (bridge) {
   }, { threshold: 0.5 });
   bridgeIO.observe(bridge);
 }
+
+/* Floating WhatsApp CTA: hidden → bar → circle */
+var floatingWa = document.getElementById('floating-wa');
+var priceSection = document.getElementById('price-section');
+var themeToggle = document.querySelector('.theme-toggle');
+if (floatingWa && priceSection) {
+  var hasSeen = false;
+  var rafId = null;
+
+  var priceIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) hasSeen = true;
+    });
+  }, { threshold: 0.15 });
+  priceIO.observe(priceSection);
+
+  function updateFloatingState() {
+    if (!hasSeen) return;
+    var rect = priceSection.getBoundingClientRect();
+    var aboveSection = rect.top > window.innerHeight;
+
+    floatingWa.classList.remove('is-bar', 'is-circle');
+    if (aboveSection) {
+      floatingWa.classList.add('is-circle');
+      if (themeToggle) themeToggle.classList.add('wa-circle-active');
+    } else {
+      floatingWa.classList.add('is-bar');
+      if (themeToggle) themeToggle.classList.remove('wa-circle-active');
+    }
+  }
+
+  window.addEventListener('scroll', function () {
+    if (rafId) return;
+    rafId = requestAnimationFrame(function () {
+      updateFloatingState();
+      rafId = null;
+    });
+  }, { passive: true });
+}
