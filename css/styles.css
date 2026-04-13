@@ -3942,12 +3942,16 @@ a.bonus-card:active {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(232, 101, 26, 0.2);
+  background: #0D0C0B;
+  max-height: 400px;
 }
 
 .faq-carousel-slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: top;
 }
 
 .faq-carousel-hint {

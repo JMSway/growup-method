@@ -6,6 +6,14 @@ window.addEventListener('beforeunload', function () {
   window.scrollTo(0, 0);
 });
 
+/* Preload FAQ carousel images into browser cache */
+['assets/images/faq/answer-3/damir-banner.webp',
+ 'assets/images/faq/answer-3/manager-result.webp',
+ 'assets/images/faq/answer-3/result-46m-chat.webp'].forEach(function (src) {
+  var img = new Image();
+  img.src = src;
+});
+
 /* Theme Toggle — always dark on load */
 document.querySelector('.theme-toggle').addEventListener('click', function () {
   var t = document.documentElement;
