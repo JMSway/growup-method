@@ -2275,6 +2275,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  max-width: 280px;
 }
 
 .step-result__item {
