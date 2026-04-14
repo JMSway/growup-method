@@ -1810,7 +1810,7 @@ ul {
 .step-result-final {
   margin-top: 10px;
   padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);     /* нейтральный серый разделитель */
+  border-top: 1px solid var(--border);
   width: 100%;
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(20px, 6.2vw, 28px);
@@ -2442,6 +2442,15 @@ ul {
 [data-theme="light"] .step-card {
   border-color: transparent;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .step-result-row .step-accent {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: var(--accent);
+  color: var(--accent);
+  animation: none;
 }
 
 /* ============================================
