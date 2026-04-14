@@ -980,8 +980,8 @@ ul {
 
 .bridge-text {
   font-family: 'Gilroy', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 17px;
   color: var(--text-primary);
   letter-spacing: 0.3px;
 }
@@ -1052,17 +1052,30 @@ ul {
 /* --- Фото + имя (центрировано вертикально) --- */
 .expert-intro {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
-  text-align: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.expert-intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
 }
 
 .expert-photo-wrap {
   flex-shrink: 0;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
+  width: 95px;
+  height: 115px;
+  border-radius: 28px;
   overflow: hidden;
   box-shadow:
     0 0 16px rgba(232, 101, 26, 0.4),
@@ -1112,7 +1125,7 @@ ul {
 .expert-name {
   font-family: 'Oswald', 'Bebas Neue', sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(18px, 5vw, 22px);
   text-transform: uppercase;
   letter-spacing: 0.3px;
   line-height: 1.1;
@@ -1122,14 +1135,16 @@ ul {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: growupShimmer 5s ease-in-out infinite;
+  text-align: left;
 }
 
 .expert-role {
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: clamp(12px, 3.2vw, 14px);
   line-height: 1.4;
   color: var(--text-primary);
+  text-align: left;
 }
 
 /* --- Проблемы --- */
