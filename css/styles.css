@@ -1100,7 +1100,7 @@ ul {
 .expert-story {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.5;
   color: var(--text-primary);
   text-align: left;
@@ -1196,7 +1196,7 @@ ul {
   font-size: 17px;
   line-height: 1.4;
   color: var(--text-primary);
-  white-space: nowrap;
+  white-space: normal;
   margin-top: 4px;
 }
 
