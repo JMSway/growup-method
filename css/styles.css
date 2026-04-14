@@ -1098,7 +1098,7 @@ ul {
 .expert-name-inline {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
-  font-size: clamp(16px, 4.5vw, 18px);
+  font-size: clamp(18px, 5vw, 20px);
   color: var(--text-primary);
 }
 
