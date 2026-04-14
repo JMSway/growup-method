@@ -685,7 +685,7 @@ ul {
 .case-title {
   font-family: 'Gilroy', sans-serif;
   font-weight: 800;
-  font-size: clamp(12px, 3.6vw, 16px);
+  font-size: 17px;
   line-height: 1.25;
   color: var(--text-primary);
   text-transform: uppercase;
@@ -772,7 +772,7 @@ ul {
   gap: 12px;
   font-family: 'Gilroy', sans-serif;
   font-weight: 500;
-  font-size: clamp(15px, 4.2vw, 17px);
+  font-size: 17px;
   line-height: 1.5;
   color: var(--text-primary);    /* белый в dark, тёмный в light */
 }
@@ -1100,7 +1100,7 @@ ul {
 .expert-story {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
-  font-size: clamp(15px, 4vw, 17px);
+  font-size: 17px;
   line-height: 1.5;
   color: var(--text-primary);
   text-align: left;
@@ -1143,7 +1143,7 @@ ul {
 .expert-problems-sub {
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 17px;
   color: var(--text-primary);
   text-align: center;
   margin-top: 4px;
@@ -1193,7 +1193,7 @@ ul {
 .problem-text {
   font-family: 'Gilroy', sans-serif;
   font-weight: 500;
-  font-size: clamp(12px, 3.4vw, 15px);
+  font-size: 17px;
   line-height: 1.4;
   color: var(--text-primary);
   white-space: nowrap;
