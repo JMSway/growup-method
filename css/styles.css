@@ -2064,6 +2064,7 @@ ul {
 }
 
 .step-image-caption {
+  display: block;
   font-family: 'Gilroy', sans-serif;
   font-size: 11px;
   color: var(--text-muted);
