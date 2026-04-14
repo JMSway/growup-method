@@ -4560,8 +4560,6 @@ a.bonus-card:active {
 .outcome-receipt {
   display: block;
   width: calc(50% - 3px);
-  transform: scale(1.15);
-  transform-origin: center top;
 }
 
 .outcome-receipt img {
