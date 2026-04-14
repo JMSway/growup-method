@@ -2428,8 +2428,8 @@ ul {
 #step-1 .step-result { margin-top: 16px; }
 /* Текст результата Шага 1 — адаптивный, держит 4 строки на 375–430px */
 #step-1 .step-result__text {
-  font-size: clamp(17px, 4.8vw, 20px);
-  line-height: 1.55;
+  font-size: clamp(15px, 4.3vw, 18px);
+  line-height: 1.5;
 }
 #step-1 .step-pointer { font-size: 17px; }
 #step-1 .step-pointer iconify-icon { font-size: 15px; }
@@ -2472,8 +2472,8 @@ ul {
 #step-3 .step-result { margin-top: 16px; }
 /* Текст результата Шага 2 — адаптивный, держит 4 строки на 375–430px */
 #step-2 .step-result__text {
-  font-size: clamp(16px, 4.6vw, 20px);
-  line-height: 1.55;
+  font-size: clamp(14px, 4.1vw, 18px);
+  line-height: 1.5;
 }
 /* Текст результата Шага 3 — адаптивный, держит 4 строки на 375–430px */
 #step-3 .step-result__text {
