@@ -2475,6 +2475,11 @@ ul {
   font-size: clamp(16px, 4.6vw, 20px);
   line-height: 1.55;
 }
+/* Текст результата Шага 3 — адаптивный, держит 4 строки на 375–430px */
+#step-3 .step-result__text {
+  font-size: clamp(15px, 4.4vw, 19px);
+  line-height: 1.55;
+}
 /* Шаг 2 специфичные */
 #step-2 .step-intro-icon { font-size: 34px; }
 #step-2 .step-tpu-block { padding: 10px 12px; margin-top: 14px; }
