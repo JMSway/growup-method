@@ -4554,12 +4554,14 @@ a.bonus-card:active {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px;
 }
 
 .outcome-receipt {
   display: block;
-  width: calc(50% - 5px);
+  width: calc(50% - 3px);
+  transform: scale(1.15);
+  transform-origin: center top;
 }
 
 .outcome-receipt img {
