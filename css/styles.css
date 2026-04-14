@@ -1074,16 +1074,27 @@ ul {
   height: 110px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(232, 101, 26, 0.18);
+  animation: expertGlow 3s ease-in-out infinite;
+}
+
+@keyframes expertGlow {
+  0%, 100% {
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.4),
+      0 0 12px rgba(232, 101, 26, 0.12);
+  }
+  50% {
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.4),
+      0 0 28px rgba(232, 101, 26, 0.38);
+  }
 }
 
 .expert-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 50%;
 }
 
 .expert-story {
