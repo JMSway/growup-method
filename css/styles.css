@@ -2401,7 +2401,7 @@ ul {
 #step-3 .step-image-chat { width: 74%; }
 /* Lead — highlight (13→17) */
 #step-2 .step-highlight { padding: 10px 12px; margin-top: 12px; font-size: 14px; font-weight: 500; line-height: 1.55; }
-#step-3 .step-highlight { padding: 10px 12px; margin-top: 12px; font-size: 14px; font-weight: 500; line-height: 1.55; }
+#step-3 .step-highlight { padding: 10px 12px; margin-top: 12px; font-size: 16px; font-weight: 500; line-height: 1.55; }
 #step-2 .step-pointer,
 #step-3 .step-pointer { font-size: 17px; }
 #step-2 .step-pointer iconify-icon,
@@ -2426,13 +2426,14 @@ ul {
 #step-2 .step-list-bullets li { font-size: 14px; }
 #step-2 .step-compare { margin-top: 12px; gap: 8px; }
 /* Шаг 3 специфичные */
-#step-3 .step-headline { font-size: 17px; font-family: 'Oswald', sans-serif; font-weight: 600; text-align: left; text-transform: uppercase; margin: 2px 0 6px; }
+#step-3 .step-headline { font-size: 17px; font-family: 'Gilroy', sans-serif; font-weight: 800; text-align: left; text-transform: uppercase; margin: 2px 0 6px; }
 #step-3 .step-headline-icon { font-size: 30px; }
-/* Body — subhead (13→15) */
-#step-3 .step-subhead { margin-top: 14px; gap: 8px; font-size: 16px; }
+#step-3 .step-text:not(.step-pointer):not(.step-highlight):not(.step-subhead):not(.step-main-line) { font-size: 17px; }
+/* Body — subhead (16→17) */
+#step-3 .step-subhead { margin-top: 14px; gap: 8px; font-size: 17px; }
 #step-3 .step-subhead-icon { font-size: 18px; }
-/* Small — large list (already 14 ✓) */
-#step-3 .step-list-large li { font-size: 14px; }
+/* Small — large list (14→15) */
+#step-3 .step-list-large li { font-size: 15px; }
 #step-3 .step-main-line { margin-top: 14px; }
 #step-3 .step-main-line-label { font-size: clamp(16px, 4.6vw, 22px); margin-bottom: 6px; }
 #step-3 .step-main-line-icon { font-size: 22px; }
