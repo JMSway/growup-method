@@ -2019,10 +2019,14 @@ ul {
 
 /* Hand-drawn oval for 2GIS screenshot — over "Места NNN" badge (top-right) */
 .step-oval-2gis .hand-drawn-oval {
-  top: 4%;
-  left: 60%;
+  top: 8%;
+  left: 64%;
   width: 38%;
   height: 22%;
+}
+
+.step-oval-2gis .hand-drawn-oval path {
+  stroke-width: 2.5;
 }
 
 .step-image img {
