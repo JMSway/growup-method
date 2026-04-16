@@ -1708,6 +1708,10 @@ ul {
   margin-bottom: 12px;
 }
 
+.step-tpu-benefits .step-text + .step-text {
+  margin-top: 12px;
+}
+
 /* Финальный заголовок-результат (заменяет .step-result в Шагах 2 и 3) */
 .step-result-block {
   margin-top: 22px;
