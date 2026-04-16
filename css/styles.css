@@ -1716,7 +1716,7 @@ ul {
 .step-result-headline {
   font-family: 'Gilroy', sans-serif;
   font-weight: 800;
-  font-size: clamp(17px, 4.5vw, 20px);
+  font-size: clamp(14px, 3.8vw, 16px);
   color: var(--text-primary);
   text-transform: uppercase;
   text-align: center;
