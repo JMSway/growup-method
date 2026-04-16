@@ -1712,15 +1712,17 @@ ul {
   margin-top: 12px;
 }
 
+#step-2 .step-tpu-benefits .step-text {
+  font-size: 16px;
+}
+
 /* Финальный заголовок-результат (заменяет .step-result в Шагах 2 и 3) */
 .step-result-block {
   margin-top: 22px;
-  padding: 23px 19px;
+  padding: 18px 0;
   background: rgba(232, 101, 26, 0.03);
-  border: 1px solid rgba(232, 101, 26, 0.4);
   border-radius: 16px;
-  box-shadow: 0 0 24px rgba(232, 101, 26, 0.08);
-  text-align: center;
+  box-shadow: inset 0 0 0 1px rgba(232, 101, 26, 0.4), 0 0 24px rgba(232, 101, 26, 0.08);
 }
 
 .step-result-headline {
