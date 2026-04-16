@@ -2250,7 +2250,7 @@ ul {
 .step-result__text {
   color: var(--text-primary);
   font-family: 'Gilroy', sans-serif;
-  font-size: clamp(13px, 3.7vw, 15px);
+  font-size: clamp(15px, 4.1vw, 18px);
   font-weight: 500;
   line-height: 1.4;
   margin: 0;
