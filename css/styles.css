@@ -2376,7 +2376,7 @@ ul {
 /* Body — obvious */
 #step-1 .step-obvious { margin-top: 10px; margin-bottom: 14px; font-size: 15px; }
 /* Caption — image captions */
-#step-1 .step-image-caption { font-size: 17px; margin-top: 8px; font-style: italic; opacity: 0.85; text-align: center; color: rgba(255,255,255,0.75); }
+#step-1 .step-image-caption { font-size: 16px; margin-top: 8px; font-style: italic; opacity: 0.85; text-align: center; color: rgba(255,255,255,0.75); }
 #step-1 > .step-card > .step-image { width: 98%; }
 /* Lead — result block */
 #step-1 .step-result { margin-top: 16px; }
