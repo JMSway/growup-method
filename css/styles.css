@@ -1288,16 +1288,30 @@ ul {
   visibility: hidden;
 }
 
-.step-badge {
+/* Wrapper — sticky, full-width, covers section gradient */
+.step .step-badge-wrap {
+  margin-top: 40px;
+}
+
+.step-badge-wrap {
   position: sticky;
-  top: 8px;
+  top: 0;
   z-index: 10;
-  transition: transform 0.2s ease-out;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 6px 16px;
+  background: var(--bg);
+}
+
+/* Badge inside wrapper — reset margin, add transition */
+.step-badge-wrap .step-badge {
+  margin-top: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: top center;
 }
 
-.step-badge.is-stuck {
-  transform: scale(0.85);
+.step-badge-wrap.is-stuck .step-badge {
+  transform: scale(0.9);
 }
 
 /* Карточка шага */
