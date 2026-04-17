@@ -540,3 +540,30 @@ if (floatingWa && priceSection) {
 /* =========================================================
    ЗАЩИТА ОТ КОПИРОВАНИЯ - END
    ========================================================= */
+
+/* Sticky step badges: scale + opacity on stick */
+(function () {
+  var badges = document.querySelectorAll('.step-badge');
+  if (!badges.length) return;
+
+  badges.forEach(function (badge) {
+    var sentinel = document.createElement('div');
+    sentinel.style.cssText = 'position:relative;height:1px;margin:0;padding:0;border:0;background:transparent;pointer-events:none;';
+    badge.parentNode.insertBefore(sentinel, badge);
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) {
+          badge.classList.add('is-stuck');
+        } else {
+          badge.classList.remove('is-stuck');
+        }
+      });
+    }, {
+      threshold: [0],
+      rootMargin: '-1px 0px 0px 0px'
+    });
+
+    observer.observe(sentinel);
+  });
+})();
