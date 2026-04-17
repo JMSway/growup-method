@@ -1281,6 +1281,25 @@ ul {
   white-space: nowrap;
 }
 
+/* ---- STICKY STEP BADGES ---- */
+.step-badge-sentinel {
+  height: 1px;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.step-badge {
+  position: sticky;
+  top: 8px;
+  z-index: 10;
+  transition: transform 0.2s ease-out;
+  transform-origin: top center;
+}
+
+.step-badge.is-stuck {
+  transform: scale(0.85);
+}
+
 /* Карточка шага */
 .step-card {
   background: var(--bg-card);
