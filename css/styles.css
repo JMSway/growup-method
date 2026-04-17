@@ -2466,6 +2466,8 @@ ul {
   text-align: left;
   line-height: 1.35;
   color: var(--text-primary);
+  width: fit-content;
+  margin: 0 auto;
 }
 .step-result-block .step-result__badge { margin-bottom: 10px; }
 
