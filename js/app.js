@@ -522,21 +522,21 @@ if (floatingWa && priceSection) {
    ========================================================= */
 (function () {
   document.querySelectorAll('.step').forEach(function (section) {
-    var wrap = section.querySelector('.step-badge-wrap');
-    if (!wrap) return;
+    var badge = section.querySelector('.step-badge');
+    if (!badge) return;
 
     var sentinel = document.createElement('div');
     sentinel.className = 'step-badge-sentinel';
     sentinel.setAttribute('aria-hidden', 'true');
-    wrap.parentNode.insertBefore(sentinel, wrap);
+    badge.parentNode.insertBefore(sentinel, badge);
 
     var observer = new IntersectionObserver(
       function (entries) {
         var entry = entries[0];
         if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-          wrap.classList.add('is-stuck');
+          badge.classList.add('is-stuck');
         } else {
-          wrap.classList.remove('is-stuck');
+          badge.classList.remove('is-stuck');
         }
       },
       { threshold: [0] }
