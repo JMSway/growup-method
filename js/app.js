@@ -567,3 +567,62 @@ if (floatingWa && priceSection) {
     observer.observe(sentinel);
   });
 })();
+
+/* =========================================================
+   META PIXEL: ВОРОНКА (scroll depth + Lead на WhatsApp CTA)
+   ========================================================= */
+(function () {
+  if (typeof fbq !== 'function') return;
+
+  var fired = Object.create(null);
+  function fireOnce(key, fn) {
+    if (fired[key]) return;
+    fired[key] = true;
+    fn();
+  }
+
+  // Скролл-глубина: ViewContent на 25%, кастомные Scroll50/75/90
+  var ticking = false;
+  function checkScroll() {
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0) {
+      var pct = (window.scrollY / docHeight) * 100;
+      if (pct >= 25) fireOnce('viewContent', function () {
+        fbq('track', 'ViewContent', { content_name: 'longread_25_percent' });
+      });
+      if (pct >= 50) fireOnce('scroll50', function () {
+        fbq('trackCustom', 'Scroll50');
+      });
+      if (pct >= 75) fireOnce('scroll75', function () {
+        fbq('trackCustom', 'Scroll75');
+      });
+      if (pct >= 90) fireOnce('scroll90', function () {
+        fbq('trackCustom', 'Scroll90');
+      });
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(checkScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Lead: клик по любой WhatsApp-ссылке. Параметр content_name — какая именно кнопка.
+  function ctaLocation(link) {
+    if (link.classList.contains('floating-wa')) return 'floating';
+    if (link.classList.contains('price-final-link')) return 'price_final';
+    if (link.classList.contains('guarantee-cta')) return 'guarantee';
+    if (link.classList.contains('faq-cta')) return 'faq';
+    if (link.classList.contains('bonus-card')) return 'bonus';
+    if (link.classList.contains('price-cta')) return 'price';
+    var section = link.closest('section');
+    return section && section.id ? section.id : 'unknown';
+  }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+    if (!link) return;
+    fbq('track', 'Lead', { content_name: ctaLocation(link) });
+  }, { capture: true });
+})();
