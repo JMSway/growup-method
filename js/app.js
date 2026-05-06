@@ -574,6 +574,15 @@ if (floatingWa && priceSection) {
 (function () {
   if (typeof fbq !== 'function') return;
 
+  // Wrapper: пробрасывает test_event_code из URL во все события (для Test Events панели)
+  function track(method, name, params) {
+    if (window.__fbTestEventCode) {
+      fbq(method, name, params || {}, { test_event_code: window.__fbTestEventCode });
+    } else {
+      fbq(method, name, params);
+    }
+  }
+
   var fired = Object.create(null);
   function fireOnce(key, fn) {
     if (fired[key]) return;
@@ -588,16 +597,16 @@ if (floatingWa && priceSection) {
     if (docHeight > 0) {
       var pct = (window.scrollY / docHeight) * 100;
       if (pct >= 25) fireOnce('viewContent', function () {
-        fbq('track', 'ViewContent', { content_name: 'longread_25_percent' });
+        track('track', 'ViewContent', { content_name: 'longread_25_percent' });
       });
       if (pct >= 50) fireOnce('scroll50', function () {
-        fbq('trackCustom', 'Scroll50');
+        track('trackCustom', 'Scroll50');
       });
       if (pct >= 75) fireOnce('scroll75', function () {
-        fbq('trackCustom', 'Scroll75');
+        track('trackCustom', 'Scroll75');
       });
       if (pct >= 90) fireOnce('scroll90', function () {
-        fbq('trackCustom', 'Scroll90');
+        track('trackCustom', 'Scroll90');
       });
     }
     ticking = false;
@@ -623,6 +632,6 @@ if (floatingWa && priceSection) {
   document.addEventListener('click', function (e) {
     var link = e.target.closest && e.target.closest('a[href*="wa.me/"]');
     if (!link) return;
-    fbq('track', 'Lead', { content_name: ctaLocation(link) });
+    track('track', 'Lead', { content_name: ctaLocation(link) });
   }, { capture: true });
 })();
